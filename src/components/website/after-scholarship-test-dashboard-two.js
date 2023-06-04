@@ -13,7 +13,7 @@ import "../js/course_detail_counter";
 import UploadProfile from "../img/upload-profile.png";
 import SkillGroup from "../img/Group 1398.png";
 import Mail from "../img/mail.png";
-
+import roadMap from "../img/fresher-eligibility-images/road_map_3_05.png";
 import UploadWhite from "../img/upload-white.png";
 
 import Calendar from "../img/icons/calendar.png";
@@ -383,12 +383,17 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                   aria-labelledby="v-pills-profile-tab"
                 >
                   <div className="row basket-row pt-3">
+                    <section className="roadMap-section mr-5">
+                      <img src={roadMap} alt="road-map" />
+                    </section>
                     <div className="col-lg-8">
                       <div className="dashboard-content edit_home">
                         <h2 className="h2">Hi {userName}, </h2>
 
                         <p className="para">
-                          Our placement manager will get in touch with you within 24 hours, meanwhile please check and complete your profile.
+                          Our placement manager will get in touch with you
+                          within 24 hours, meanwhile please check and complete
+                          your profile.
                         </p>
 
                         <div className="after-sc-profile-info-container">
@@ -467,7 +472,9 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                               >
                                 <div className="">
                                   <div className="form-group">
-                                    <label htmlFor="">Duration of Career Break</label>
+                                    <label htmlFor="">
+                                      Duration of Career Break
+                                    </label>
                                     <span
                                       style={{ color: "red" }}
                                       className="formErrors"
@@ -485,7 +492,9 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                                   </div>
 
                                   <div className="form-group">
-                                    <label htmlFor="">Previous Designation</label>
+                                    <label htmlFor="">
+                                      Previous Designation
+                                    </label>
                                     <input
                                       type="text"
                                       className="form-control"
@@ -498,7 +507,9 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                                   </div>
 
                                   <div className="form-group">
-                                    <label htmlFor="">Years of Working Experience</label>
+                                    <label htmlFor="">
+                                      Years of Working Experience
+                                    </label>
                                     <span
                                       style={{ color: "red" }}
                                       className="formErrors"
@@ -533,29 +544,27 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                                     />
                                   </div> */}
                                   <div className="form-group">
-                                  <label htmlFor="">
-                                    Highest level of education
-                                  </label>
-                                  <input
-                                    type="text"
-                                    className="form-control"
-                                    defaultValue={
-                                      ProfileData?.post_graduation_program_name
-                                    }
-                                    name="post_graduation_program_name"
-                                    onChange={(e) => handleChange(e)}
-                                    placeholder="NA"
-                                  />
-                                </div>
+                                    <label htmlFor="">
+                                      Highest level of education
+                                    </label>
+                                    <input
+                                      type="text"
+                                      className="form-control"
+                                      defaultValue={
+                                        ProfileData?.post_graduation_program_name
+                                      }
+                                      name="post_graduation_program_name"
+                                      onChange={(e) => handleChange(e)}
+                                      placeholder="NA"
+                                    />
+                                  </div>
                                 </div>
                               </div>
                             </div>
                             <div className="col-lg-6">
                               <div className="select-block input-form">
                                 <div className="form-group">
-                                  <label htmlFor="">
-                                    Last Company
-                                  </label>
+                                  <label htmlFor="">Last Company</label>
                                   <span
                                     style={{ color: "red" }}
                                     className="formErrors"
@@ -1768,7 +1777,6 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                     </div>
                   </div>
                 </div>
-
                 <div
                   className="tab-pane fade basket-banner"
                   id="v-pills-messages"
