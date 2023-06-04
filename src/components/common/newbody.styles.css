@@ -120,6 +120,20 @@
     font-family: 'Lexend';
   }
 
+  .add-button{
+      width: 150px;
+      height: 52px;
+      border-radius: 13px;
+      border: none;
+      outline: none;
+      background-color:#005F59 ;
+      color: #FFFFFF;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 30px;
+      font-family: 'Lexend';
+  }
+
   .experienced-button-small{
     width:170px;
     height: 45px;

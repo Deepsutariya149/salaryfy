@@ -11,6 +11,7 @@ import logOut from "../img/icons/log-out.png";
 import Upload from "../img/icons/upload.png";
 import "../js/course_detail_counter";
 import UploadProfile from "../img/upload-profile.png";
+import SkillGroup from "../img/Group 1398.png";
 import Mail from "../img/mail.png";
 
 import UploadWhite from "../img/upload-white.png";
@@ -472,9 +473,17 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                               </div>
                             </div>
                             <div className="col-lg-6">
-                              <p>Upload your passport photo</p>
+                            <div className="dashboard-content"> <h2 className="h2">Hi Rahul N,</h2></div>
+                              <p>Please complete your profile and more subtext here</p>
                             </div>
                           </div>
+                          {/* <div className="dashboard-content"> <h2 className="h2">Skills</h2></div> */}
+                          <div>   <img
+                                    className="profile-pic"
+                                    src={SkillGroup}
+                                  /></div>
+                          <div className="dashboard-content"> <h2 className="h2">Upload documents</h2></div>
+                          <div className="dashboard-content"> <h3 className="h3">Identification documents</h3></div>
                           <div className="row upload_docs_wrappper">
                             <div className="col-lg-6 col-md-8 col-sm-12 upload_space">
                               <div
@@ -497,7 +506,7 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                                       />
                                     )}
                                     <div className="upload-msg">
-                                      <p>X certificate </p>
+                                      <p>Upload aadhar </p>
                                       {selectedFile1 &&
                                       selectedFile1.type ===
                                         "application/pdf" ? (
@@ -548,7 +557,7 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                                     )}
 
                                     <div className="upload-msg">
-                                      <p>XII certificate </p>
+                                      <p>Cancelled cheque </p>
                                       {selectedFile2 &&
                                       selectedFile2.type ===
                                         "application/pdf" ? (
@@ -578,55 +587,7 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                                 </div>
                               </div>
 
-                              <div
-                                className={`upload-buttons ${
-                                  fileSelected3 ? "selected" : ""
-                                } ${fileUploaded3 ? "after-upload" : ""}`}>
-                                <div className="form-group">
-                                  <label htmlFor="exampleFormControlFile4">
-                                    {fileUploaded3 === true ? (
-                                      <img
-                                        src={UploadWhite}
-                                        alt=""
-                                        className="white-img"
-                                      />
-                                    ) : (
-                                      <img
-                                        src={Upload}
-                                        alt=""
-                                        className="green-img"
-                                      />
-                                    )}
-                                    <div className="upload-msg">
-                                      <p>Cancelled cheque</p>
-                                      {selectedFile3 &&
-                                      selectedFile3.type ===
-                                        "application/pdf" ? (
-                                        <p className="parag">
-                                          {" "}
-                                          <span> ({selectedFile3.name})</span>
-                                        </p>
-                                      ) : (
-                                        <p className="parag"></p>
-                                      )}
-                                      {!selectedFile3 && submitClicked && (
-                                        <p
-                                          style={{ color: "red" }}
-                                          className="formErrors">
-                                          Please select a file*
-                                        </p>
-                                      )}
-                                    </div>
-                                  </label>
-                                  <input
-                                    type="file"
-                                    className="form-control-file"
-                                    id="exampleFormControlFile4"
-                                    onChange={onChangeHandler3}
-                                    name="cancelled_cheque"
-                                  />
-                                </div>
-                              </div>
+                           
                             </div>
                             <div className="col-lg-6 col-md-8 col-sm-12 upload_space">
                               <div
@@ -650,7 +611,7 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                                     )}
 
                                     <div className="upload-msg">
-                                      <p>Graduate Marksheet</p>
+                                      <p>Upload PAN</p>
                                       {selectedFile4 &&
                                       selectedFile4.type ===
                                         "application/pdf" ? (
@@ -701,7 +662,7 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                                     )}
 
                                     <div className="upload-msg">
-                                      <p>Graduation degree</p>
+                                      <p>Front page of bank passbook</p>
                                       {selectedFile5 &&
                                       selectedFile5.type ===
                                         "application/pdf" ? (
@@ -731,13 +692,84 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                                 </div>
                               </div>
 
+
+                            </div>
+                            <div className="mt-3 background_detail_submit">
+                              {/* <button
+                                type="button"
+                                className="theme_btn edit_btn"
+                                onClick={handleSubmit}
+                              >
+                                Save
+                                <span></span>
+                              </button> */}
+                            </div>
+                          </div>
+                          <div className="dashboard-content"><h3 className="h3">Education</h3></div>
+                          <div className="row upload_docs_wrappper">
+                            <div className="col-lg-6 col-md-8 col-sm-12 upload_space">
                               <div
                                 className={`upload-buttons ${
-                                  fileSelected6 ? "selected" : ""
-                                } ${fileUploaded6 ? "after-upload" : ""}`}>
+                                  fileSelected1 ? "selected" : ""
+                                } ${fileUploaded1 ? "after-upload" : ""}`}>
                                 <div className="form-group">
-                                  <label htmlFor="exampleFormControlFile7">
-                                    {fileUploaded6 === true ? (
+                                  <label htmlFor="exampleFormControlFile1">
+                                    {fileUploaded1 === true ? (
+                                      <img
+                                        src={UploadWhite}
+                                        alt=""
+                                        className="white-img"
+                                      />
+                                    ) : (
+                                      <img
+                                        src={Upload}
+                                        alt=""
+                                        className="green-img"
+                                      />
+                                    )}
+                                    <div className="upload-msg">
+                                      <p>Graduate Marksheet </p>
+                                      {selectedFile1 &&
+                                      selectedFile1.type ===
+                                        "application/pdf" ? (
+                                        <p className="parag">
+                                          {" "}
+                                          <span>({selectedFile1.name})</span>
+                                        </p>
+                                      ) : (
+                                        <p className="parag"></p>
+                                      )}
+                                      {!selectedFile1 && submitClicked && (
+                                        <p
+                                          style={{ color: "red" }}
+                                          className="formErrors">
+                                          Please select a file*
+                                        </p>
+                                      )}
+                                    </div>
+                                  </label>
+                                  <input
+                                    type="file"
+                                    className="form-control-file"
+                                    id="exampleFormControlFile1"
+                                    onChange={onChangeHandler1}
+                                    name="x_certificate"
+                                  />
+                                </div>
+                              </div>
+
+
+
+
+                            </div>
+                            <div className="col-lg-6 col-md-8 col-sm-12 upload_space">
+                              <div
+                                className={`upload-buttons ${
+                                  fileSelected4 ? "selected" : ""
+                                } ${fileUploaded4 ? "after-upload" : ""}`}>
+                                <div className="form-group">
+                                  <label htmlFor="exampleFormControlFile5">
+                                    {fileUploaded4 === true ? (
                                       <img
                                         src={UploadWhite}
                                         alt=""
@@ -752,35 +784,341 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                                     )}
 
                                     <div className="upload-msg">
-                                      <p>PG degree (If any)</p>
-                                      {selectedFile6 &&
-                                      selectedFile6.type ===
+                                      <p>Graduate degree</p>
+                                      {selectedFile4 &&
+                                      selectedFile4.type ===
                                         "application/pdf" ? (
                                         <p className="parag">
                                           {" "}
-                                          <span> ({selectedFile6.name})</span>
+                                          <span> ({selectedFile4.name})</span>
                                         </p>
                                       ) : (
                                         <p className="parag"></p>
                                       )}
-                                      {/* {!selectedFile6 && submitClicked && (
+                                      {!selectedFile4 && submitClicked && (
                                         <p
                                           style={{ color: "red" }}
                                           className="formErrors">
                                           Please select a file*
                                         </p>
-                                      )} */}
+                                      )}
                                     </div>
                                   </label>
                                   <input
                                     type="file"
                                     className="form-control-file"
-                                    id="exampleFormControlFile7"
-                                    onChange={onChangeHandler6}
-                                    name="post_graduate_certificate"
+                                    id="exampleFormControlFile5"
+                                    onChange={onChangeHandler4}
+                                    name="graduate_marksheet"
                                   />
                                 </div>
                               </div>
+
+
+                            </div>
+                            <div className="mt-3 background_detail_submit">
+                              {/* <button
+                                type="button"
+                                className="theme_btn edit_btn"
+                                onClick={handleSubmit}
+                              >
+                                Save
+                                <span></span>
+                              </button> */}
+                            </div>
+                          </div>
+                          <button
+                        // onClick={}
+                        className="add-button"
+                      >
+                        Add
+                      </button>
+                          <div className="dashboard-content"><h3 className="h3">Skills</h3></div>
+
+                          <div className="row upload_docs_wrappper">
+                            <div className="col-lg-6 col-md-8 col-sm-12 upload_space">
+                              <div
+                                className={`upload-buttons ${
+                                  fileSelected1 ? "selected" : ""
+                                } ${fileUploaded1 ? "after-upload" : ""}`}>
+                                <div className="form-group">
+                                  <label htmlFor="exampleFormControlFile1">
+                                    {fileUploaded1 === true ? (
+                                      <img
+                                        src={UploadWhite}
+                                        alt=""
+                                        className="white-img"
+                                      />
+                                    ) : (
+                                      <img
+                                        src={Upload}
+                                        alt=""
+                                        className="green-img"
+                                      />
+                                    )}
+                                    <div className="upload-msg">
+                                      <p>Course certificate </p>
+                                      {selectedFile1 &&
+                                      selectedFile1.type ===
+                                        "application/pdf" ? (
+                                        <p className="parag">
+                                          {" "}
+                                          <span>({selectedFile1.name})</span>
+                                        </p>
+                                      ) : (
+                                        <p className="parag"></p>
+                                      )}
+                                      {!selectedFile1 && submitClicked && (
+                                        <p
+                                          style={{ color: "red" }}
+                                          className="formErrors">
+                                          Please select a file*
+                                        </p>
+                                      )}
+                                    </div>
+                                  </label>
+                                  <input
+                                    type="file"
+                                    className="form-control-file"
+                                    id="exampleFormControlFile1"
+                                    onChange={onChangeHandler1}
+                                    name="x_certificate"
+                                  />
+                                </div>
+                              </div>
+
+
+
+
+                            </div>
+                          
+                            <div className="mt-3 background_detail_submit">
+                              {/* <button
+                                type="button"
+                                className="theme_btn edit_btn"
+                                onClick={handleSubmit}
+                              >
+                                Save
+                                <span></span>
+                              </button> */}
+                            </div>
+                          </div>
+                          <button
+                        // onClick={}
+                        className="add-button"
+                      >
+                        Add
+                      </button>
+                          <div className="dashboard-content"><h3 className="h3">any career break?</h3></div>
+                          <div className="row upload_docs_wrappper">
+                            <div className="col-lg-6 col-md-8 col-sm-12 upload_space">
+                              <div
+                                className={`upload-buttons ${
+                                  fileSelected1 ? "selected" : ""
+                                } ${fileUploaded1 ? "after-upload" : ""}`}>
+                                <div className="form-group">
+                                  <label htmlFor="exampleFormControlFile1">
+                                    {fileUploaded1 === true ? (
+                                      <img
+                                        src={UploadWhite}
+                                        alt=""
+                                        className="white-img"
+                                      />
+                                    ) : (
+                                      <img
+                                        src={Upload}
+                                        alt=""
+                                        className="green-img"
+                                      />
+                                    )}
+                                    <div className="upload-msg">
+                                      <p>Last oppointed letter </p>
+                                      {selectedFile1 &&
+                                      selectedFile1.type ===
+                                        "application/pdf" ? (
+                                        <p className="parag">
+                                          {" "}
+                                          <span>({selectedFile1.name})</span>
+                                        </p>
+                                      ) : (
+                                        <p className="parag"></p>
+                                      )}
+                                      {!selectedFile1 && submitClicked && (
+                                        <p
+                                          style={{ color: "red" }}
+                                          className="formErrors">
+                                          Please select a file*
+                                        </p>
+                                      )}
+                                    </div>
+                                  </label>
+                                  <input
+                                    type="file"
+                                    className="form-control-file"
+                                    id="exampleFormControlFile1"
+                                    onChange={onChangeHandler1}
+                                    name="x_certificate"
+                                  />
+                                </div>
+                              </div>
+
+                              <div
+                                className={`upload-buttons ${
+                                  fileSelected2 ? "selected" : ""
+                                } ${fileUploaded2 ? "after-upload" : ""}`}>
+                                <div className="form-group">
+                                  <label htmlFor="exampleFormControlFile2">
+                                    {fileUploaded2 === true ? (
+                                      <img
+                                        src={UploadWhite}
+                                        alt=""
+                                        className="white-img"
+                                      />
+                                    ) : (
+                                      <img
+                                        src={Upload}
+                                        alt=""
+                                        className="green-img"
+                                      />
+                                    )}
+
+                                    <div className="upload-msg">
+                                      <p>Bank statement for 3 months </p>
+                                      {selectedFile2 &&
+                                      selectedFile2.type ===
+                                        "application/pdf" ? (
+                                        <p className="parag">
+                                          {" "}
+                                          <span> ({selectedFile2.name})</span>
+                                        </p>
+                                      ) : (
+                                        <p className="parag"></p>
+                                      )}
+                                      {!selectedFile2 && submitClicked && (
+                                        <p
+                                          style={{ color: "red" }}
+                                          className="formErrors">
+                                          Please select a file*
+                                        </p>
+                                      )}
+                                    </div>
+                                  </label>
+                                  <input
+                                    type="file"
+                                    className="form-control-file"
+                                    id="exampleFormControlFile2"
+                                    onChange={onChangeHandler2}
+                                    name="xii_certificate"
+                                  />
+                                </div>
+                              </div>
+
+                           
+                            </div>
+                            <div className="col-lg-6 col-md-8 col-sm-12 upload_space">
+                              <div
+                                className={`upload-buttons ${
+                                  fileSelected4 ? "selected" : ""
+                                } ${fileUploaded4 ? "after-upload" : ""}`}>
+                                <div className="form-group">
+                                  <label htmlFor="exampleFormControlFile5">
+                                    {fileUploaded4 === true ? (
+                                      <img
+                                        src={UploadWhite}
+                                        alt=""
+                                        className="white-img"
+                                      />
+                                    ) : (
+                                      <img
+                                        src={Upload}
+                                        alt=""
+                                        className="green-img"
+                                      />
+                                    )}
+
+                                    <div className="upload-msg">
+                                      <p>Last increment letter</p>
+                                      {selectedFile4 &&
+                                      selectedFile4.type ===
+                                        "application/pdf" ? (
+                                        <p className="parag">
+                                          {" "}
+                                          <span> ({selectedFile4.name})</span>
+                                        </p>
+                                      ) : (
+                                        <p className="parag"></p>
+                                      )}
+                                      {!selectedFile4 && submitClicked && (
+                                        <p
+                                          style={{ color: "red" }}
+                                          className="formErrors">
+                                          Please select a file*
+                                        </p>
+                                      )}
+                                    </div>
+                                  </label>
+                                  <input
+                                    type="file"
+                                    className="form-control-file"
+                                    id="exampleFormControlFile5"
+                                    onChange={onChangeHandler4}
+                                    name="graduate_marksheet"
+                                  />
+                                </div>
+                              </div>
+
+                              <div
+                                className={`upload-buttons ${
+                                  fileSelected5 ? "selected" : ""
+                                } ${fileUploaded5 ? "after-upload" : ""}`}>
+                                <div className="form-group">
+                                  <label htmlFor="exampleFormControlFile6">
+                                    {fileUploaded5 === true ? (
+                                      <img
+                                        src={UploadWhite}
+                                        alt=""
+                                        className="white-img"
+                                      />
+                                    ) : (
+                                      <img
+                                        src={Upload}
+                                        alt=""
+                                        className="green-img"
+                                      />
+                                    )}
+
+                                    <div className="upload-msg">
+                                      <p>Last 3 salary slips</p>
+                                      {selectedFile5 &&
+                                      selectedFile5.type ===
+                                        "application/pdf" ? (
+                                        <p className="parag">
+                                          {" "}
+                                          <span> ({selectedFile5.name})</span>
+                                        </p>
+                                      ) : (
+                                        <p className="parag"></p>
+                                      )}
+                                      {!selectedFile5 && submitClicked && (
+                                        <p
+                                          style={{ color: "red" }}
+                                          className="formErrors">
+                                          Please select a file*
+                                        </p>
+                                      )}
+                                    </div>
+                                  </label>
+                                  <input
+                                    type="file"
+                                    className="form-control-file"
+                                    id="exampleFormControlFile6"
+                                    onChange={onChangeHandler5}
+                                    name="graduate_certificate"
+                                  />
+                                </div>
+                              </div>
+
+
                             </div>
                             <div className="mt-3 background_detail_submit">
                               {/* <button
@@ -796,7 +1134,7 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                         </div>
                       </div>
 
-                      <form>
+                      {/* <form>
                         <div className="dashboard-content">
                           <h2 className="h2">Profile</h2>
                         </div>
@@ -1067,7 +1405,7 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                           </div>
                         </div>
 
-                        <div className="mt-3">
+                        <div className="mt-3"> */}
                           {/* <button
                             type="button"
                             className="theme_btn transparent">
@@ -1075,7 +1413,7 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                             <span></span>
                           </button> */}
 
-                          {isSubmitted  && isSubmitted1 ? (
+                          {/* {isSubmitted  && isSubmitted1 ? (
                             <p>Form submitted successfully!</p>
                           ) : (
                             ""
@@ -1096,7 +1434,7 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                             <span></span>
                           </button>
                         </div>
-                      </form>
+                      </form> */}
                     </div>
                     <div className="col-lg-4">
                       <div className="summary-table mb-5">

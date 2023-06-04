@@ -7,6 +7,7 @@ import selectIcon from "../img/select-icon.png";
 import Certi from "../img/certi.png";
 import SvgArrow from "../img/arrow-svg.svg";
 import RightGreen from "../img/right-green.png";
+import superFastImage from '../img/super_lite.png'
 import Mail from "../img/mail.png";
 
 import Calendar from "../img/icons/calendar.png";
@@ -146,25 +147,23 @@ const BasketPaymentTwo = () => {
                                         <div className="certificate_background_sec">
                       <div className="basket-payment">
                         <div className="certificate_title">
-                          <h4 className="h4">Career center</h4>
-                          <h4>₹999</h4>
+                          <h3 className="h3">Super Fast</h3>
+                          <h4>₹500</h4>
                         </div>
+                  
                         <div
                           className="accordion style-2"
                           id="accordionExample">
                           <div className="card">
                             <div
                               id="heading-one"
-                              className="card-header collapsed show-more-less"
-                              data-toggle="collapse"
-                              data-target="#collapse0"
-                              aria-expanded="false">
-                              Show less
-                              <img
+                              className="card-header collapsed show-more-less">
+                              Job switch plan for
+                              {/* <img
                                 src={selectIcon}
                                 className="select-icon"
                                 alt=""
-                              />
+                              /> */}
                             </div>
 
 
@@ -176,10 +175,10 @@ const BasketPaymentTwo = () => {
                               <div className="card-body">
                                 <ul>
                                   <li>
-                                    <p>60% Minimun salary hike</p>
+                                    <p>Job switch within 2 months</p>
                                   </li>
                                   <li>
-                                    <p>Get into placement drives</p>
+                                    <p>Expected hike 80%</p>
                                   </li>
                                   <li>
                                     <p>
@@ -187,20 +186,32 @@ const BasketPaymentTwo = () => {
                                     </p>
                                   </li>
                                   <li>
-                                    <p>Soft skills development</p>
+                                    <p>Linkedinenhancement</p>
                                   </li>
                                   <li>
                                     <p>
-                                      Interpersonal skills development
-                                    </p>
-                                  </li>
-                                  <li>
-                                    <p>
-                                      Mock interviews
+                                      Job fitment analysis
                                     </p>
                                   </li>
                                  
                                 </ul>
+                                <div className="left_checkbox">
+                                      <div className="form-check">
+                                        <input
+                                          className="form-check-input"
+                                          type="checkbox"
+                                          value=""
+                                          id="invalidCheck2"
+                                          checked={isChecked}
+                                          onChange={handleCheckboxChange}
+                                        />
+                                        <label
+                                          className="form-check-label"
+                                          htmlFor="invalidCheck2">
+                                         I have read all the <a href = "#"> Terms & conditions</a> 
+                                        </label>
+                                      </div>
+                                    </div>
                                 
                               </div>
                             </div>
@@ -217,24 +228,24 @@ const BasketPaymentTwo = () => {
                                                 total-row-border">
                           <td className="">
                             {" "}
-                            <p>(Inclusive of 18% gst)</p>
+                            {/* <p>(Inclusive of 18% gst)</p> */}
                           </td>
 
                           <td>
-                            <p> ₹999</p>
+                            {/* <p> ₹999</p> */}
                           </td>
                         </tr>
                         <tr className="bg-blue-line-1">
                           <td className="">
-                            <p className="p">
+                            {/* <p className="p">
                               {" "}
                               Coupon
                               <input type="text" placeholder="STUDY500" />
-                            </p>
+                            </p> */}
                           </td>
 
                           <td>
-                            <p>- ₹500</p>
+                            {/* <p>- ₹500</p> */}
                           </td>
                         </tr>
 
@@ -243,14 +254,14 @@ const BasketPaymentTwo = () => {
                             <h4>Total:</h4>
                           </td>
                           <td>
-                            <h4>₹{paymentAmount}</h4>
+                            <h4>₹500</h4>
                           </td>
                         </tr>
                       </tbody>
                     </table>
 
                     <div className="form-group">
-                                    <div className="left_checkbox">
+                                    {/* <div className="left_checkbox">
                                       <div className="form-check">
                                         <input
                                           className="form-check-input"
@@ -266,8 +277,8 @@ const BasketPaymentTwo = () => {
                                          I am flexible to work location
                                         </label>
                                       </div>
-                                    </div>
-                                    <div className="left_checkbox">
+                                    </div> */}
+                                    {/* <div className="left_checkbox">
                                       <div className="form-check">
                                         <input
                                           className="form-check-input"
@@ -283,8 +294,8 @@ const BasketPaymentTwo = () => {
                                          I have read all the T&C
                                         </label>
                                       </div>
-                                    </div>
-                                    <div className="left_checkbox">
+                                    </div> */}
+                                    {/* <div className="left_checkbox">
                                       <div className="form-check">
                                         <input
                                           className="form-check-input"
@@ -300,7 +311,7 @@ const BasketPaymentTwo = () => {
                                          I agree to pay 1% of my annual CTC post a successful job change
                                         </label>
                                       </div>
-                                    </div>
+                                    </div> */}
                                     
                                   </div>
                     <div className="right-block">
@@ -310,7 +321,7 @@ const BasketPaymentTwo = () => {
                         id="buttonClick"
                         className="theme_btn tertiary"
                         >
-                         Get access
+                         Proceed
                         <img src={RightGreen} alt="arrow" className="img-1"/>
                              <img src={SvgArrow} className="partners-img img-2" alt="" />
                         <span></span>
