@@ -73,12 +73,11 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
     graduation_program_name: "",
     post_graduation_program_name: "",
     bank_account_number: "",
-    ifsc_number:"",
+    ifsc_number: "",
     bank_name: "",
-    bank_branch_name:""
-    
+    bank_branch_name: "",
   });
-  
+
   useEffect(() => {
     // Get profile through Api
     console.log("token_first", Token);
@@ -175,7 +174,6 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
   };
 
   const handleChange = (e) => {
-   
     setProfileData({ ...ProfileData, [e.target.name]: e.target.value });
   };
 
@@ -231,16 +229,15 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
     directPlaceFormSubmit();
   };
 
-   
   const validate = (values) => {
     const errors = {};
- 
+
     if (!values.name) {
       errors.name = "required*";
     }
     if (!values.city) {
       errors.city = "required*";
-    } 
+    }
     if (!values.gender) {
       errors.gender = "required*";
     }
@@ -270,18 +267,17 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
     }
     return errors;
   };
-  
+
   const onSubmit = (e) => {
     setFormErrors(validate(ProfileData));
     setIssubmit(true);
     e.preventDefault();
-   };
-  
+  };
+
   const SubmitTestForm = function () {
     console.log("hello", ProfileData);
     let formErrors = validate(ProfileData);
-    if (Object.keys(formErrors).length === 0 ) {
-      
+    if (Object.keys(formErrors).length === 0) {
       let data = JSON.stringify(ProfileData);
       let config = {
         method: "post",
@@ -307,16 +303,12 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
         })
         .catch(function (error) {
           console.log("error in code");
-        }); 
-    }
-    else {
+        });
+    } else {
       setFormErrors(formErrors);
     }
   };
-  
- 
-  
-  
+
   return (
     <React.Fragment>
       <NavbarTwo />
@@ -328,7 +320,8 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                 className="nav flex-column nav-pills"
                 id="v-pills-tab"
                 role="tablist"
-                aria-orientation="vertical">
+                aria-orientation="vertical"
+              >
                 <a
                   className="nav-link active"
                   id="v-pills-profile-tab"
@@ -336,7 +329,8 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                   href="#v-pills-profile"
                   role="tab"
                   aria-controls="v-pills-profile"
-                  aria-selected="true">
+                  aria-selected="true"
+                >
                   <img src={HomeGreen} alt="icon" className="green-icon" />{" "}
                   <img src={Home} alt="icon" className="white-icon" />{" "}
                 </a>
@@ -347,7 +341,8 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                   href="#v-pills-home"
                   role="tab"
                   aria-controls="v-pills-home"
-                  aria-selected="false">
+                  aria-selected="false"
+                >
                   <img src={Document} alt="icon" className="green-icon" />{" "}
                   <img src={DocumentWhite} alt="icon" className="white-icon" />
                 </a>
@@ -358,16 +353,20 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                   href="#v-pills-messages"
                   role="tab"
                   aria-controls="v-pills-messages"
-                  aria-selected="false">
+                  aria-selected="false"
+                >
                   <img src={process} alt="icon" className="green-icon" />{" "}
                   <img src={ProcessWhite} alt="icon" className="white-icon" />
                 </a>
               </div>
 
               <div className="log-out-div">
-              <a 
+                <a
                   className="nav-link active"
-                   data-toggle="tooltip" data-placement="top" title="Log out">
+                  data-toggle="tooltip"
+                  data-placement="top"
+                  title="Log out"
+                >
                   <img src={logOut} alt="icon" className="green-icon" />
                 </a>
               </div>
@@ -375,12 +374,14 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
             <div className="col-lg-10 col-md-10 col-sm-9 m-auto margin-auto-hide">
               <div
                 className="tab-content edit_dashboard_content"
-                id="v-pills-tabContent">
+                id="v-pills-tabContent"
+              >
                 <div
                   className="tab-pane fade show active basket-banner"
                   id="v-pills-profile"
                   role="tabpanel"
-                  aria-labelledby="v-pills-profile-tab">
+                  aria-labelledby="v-pills-profile-tab"
+                >
                   <div className="row basket-row pt-3">
                     <div className="col-lg-8">
                       <div className="dashboard-content edit_home">
@@ -399,26 +400,315 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                           It is recommended that you complete your profile &
                           documents prior the classes.
                         </p>
-                        <a
-                          style={{ textDecoration: "none" }}
-                          onClick={() => {
-                            document.getElementById("v-pills-home-tab").click();
-                          }}
-                          className="theme_btn">
-                          Complete your profile
-                          <img src={SvgArrow} className="partners-img" alt="" />
-                          <span></span>
-                        </a>
+
+                        <div className="after-sc-profile-info-container">
+                          <div className="after-sc-profile-info-row">
+                            <div
+                              className="after-sc-profile-info-left"
+                              style={{ borderRadius: "15px 0px 0px 0px" }}
+                            >
+                              Full Name
+                            </div>
+                            <div className="after-sc-profile-info-right">
+                              Rahul Roy
+                            </div>
+                          </div>
+                          <div className="after-sc-profile-info-row">
+                            <div className="after-sc-profile-info-left">
+                              Phone
+                            </div>
+                            <div className="after-sc-profile-info-right">
+                              +91-9875634343
+                            </div>
+                          </div>
+                          <div className="after-sc-profile-info-row">
+                            <div className="after-sc-profile-info-left">
+                              Email
+                            </div>
+                            <div className="after-sc-profile-info-right">
+                              rahulroy@gmail.com
+                            </div>
+                          </div>
+                          <div className="after-sc-profile-info-row">
+                            <div className="after-sc-profile-info-left">
+                              Resume
+                            </div>
+                            <div className="after-sc-profile-info-right">
+                              Uploaded
+                            </div>
+                          </div>
+                          <div className="after-sc-profile-info-row">
+                            <div className="after-sc-profile-info-left">
+                              Plan Opted
+                            </div>
+                            <div className="after-sc-profile-info-right">
+                              Entry Level Experience
+                            </div>
+                          </div>
+                          <div className="after-sc-profile-info-row">
+                            <div className="after-sc-profile-info-left">
+                              Sign up Date
+                            </div>
+                            <div className="after-sc-profile-info-right">
+                              30 May 2023
+                            </div>
+                          </div>
+                          <div className="after-sc-profile-info-row">
+                            <div
+                              className="after-sc-profile-info-left"
+                              style={{ borderRadius: "0px 0px 0px 15px" }}
+                            >
+                              Payment Method
+                            </div>
+                            <div className="after-sc-profile-info-right">
+                              Card
+                            </div>
+                          </div>
+                        </div>
+                        <form className="after-sc-form-container">
+                          <div className="dashboard-content">
+                            <h2 className="h2">Profile</h2>
+                          </div>
+                          <div className="row">
+                            <div className="col-lg-6">
+                              <div
+                                className="select-block
+                                            input-form"
+                              >
+                                <div className="">
+                                  <div className="form-group">
+                                    <label htmlFor="">Name</label>
+                                    <span
+                                      style={{ color: "red" }}
+                                      className="formErrors"
+                                    >
+                                      {formErrors.name}
+                                    </span>
+                                    <input
+                                      type="text"
+                                      className="form-control"
+                                      defaultValue={ProfileData?.name}
+                                      name="name"
+                                      onChange={(e) => handleChange(e)}
+                                      placeholder="Name"
+                                    />
+                                  </div>
+
+                                  <div className="form-group">
+                                    <label htmlFor="">Phone number</label>
+                                    <input
+                                      type="text"
+                                      className="form-control"
+                                      defaultValue={ProfileData?.user?.phone}
+                                      name="phone"
+                                      readOnly={isReadOnly}
+                                      onChange={(e) => handleChange(e)}
+                                      placeholder="+91 xxxx xxxx"
+                                    />
+                                  </div>
+
+                                  <div className="form-group">
+                                    <label htmlFor="">City</label>
+                                    <span
+                                      style={{ color: "red" }}
+                                      className="formErrors"
+                                    >
+                                      {formErrors.city}
+                                    </span>
+                                    <input
+                                      type="text"
+                                      className="form-control"
+                                      defaultValue={ProfileData?.city}
+                                      name="city"
+                                      onChange={(e) => handleChange(e)}
+                                      placeholder="City"
+                                    />
+                                  </div>
+
+                                  <div className="form-group">
+                                    <label htmlFor="">Gender</label>
+                                    <span
+                                      style={{ color: "red" }}
+                                      className="formErrors"
+                                    >
+                                      {formErrors.gender}
+                                    </span>
+                                    <input
+                                      type="text"
+                                      className="form-control"
+                                      defaultValue={ProfileData?.gender}
+                                      name="gender"
+                                      onChange={(e) => handleChange(e)}
+                                      placeholder="Gender"
+                                    />
+                                  </div>
+
+                                  <div className="form-group">
+                                    <label htmlFor="">Age</label>
+                                    <span
+                                      style={{ color: "red" }}
+                                      className="formErrors"
+                                    >
+                                      {formErrors.age}
+                                    </span>
+                                    <input
+                                      type="number"
+                                      className="form-control"
+                                      defaultValue={ProfileData?.age}
+                                      name="age"
+                                      onChange={(e) => handleChange(e)}
+                                      placeholder="23"
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div className="col-lg-6">
+                              <div className="select-block input-form">
+                                <div className="form-group">
+                                  <label htmlFor="">
+                                    Registered email address
+                                  </label>
+                                  <span
+                                    style={{ color: "red" }}
+                                    className="formErrors"
+                                  >
+                                    {formErrors.email}
+                                  </span>
+                                  <input
+                                    type="text"
+                                    className="form-control"
+                                    defaultValue={ProfileData?.email}
+                                    onChange={(e) => handleChange(e)}
+                                    name="email"
+                                    placeholder="rahaul@gmail.com"
+                                  />
+                                </div>
+                                <div className="form-group">
+                                  <label htmlFor="">
+                                    Alternate Contact no.
+                                  </label>
+                                  <span
+                                    style={{ color: "red" }}
+                                    className="formErrors"
+                                  >
+                                    {formErrors.alternate_number}
+                                  </span>
+                                  <input
+                                    type="tel"
+                                    maxLength="10"
+                                    name="alternate_number"
+                                    className="form-control"
+                                    onChange={(e) => handleChange(e)}
+                                    placeholder="9894768594"
+                                    defaultValue={ProfileData?.alternate_number}
+                                  />
+                                </div>
+                                <div className="form-group">
+                                  <label htmlFor="">
+                                    Graduation Program Name
+                                  </label>
+                                  <span
+                                    style={{ color: "red" }}
+                                    className="formErrors"
+                                  >
+                                    {formErrors.gradProName}
+                                  </span>
+                                  <input
+                                    type="text"
+                                    className="form-control"
+                                    defaultValue={ProfileData?.gradProName}
+                                    name="gradProName"
+                                    onChange={(e) => handleChange(e)}
+                                    placeholder="NA"
+                                  />
+                                </div>
+
+                                <div className="form-group">
+                                  <label htmlFor="">
+                                    Post Graduation Program Name (if any)
+                                  </label>
+                                  <input
+                                    type="text"
+                                    className="form-control"
+                                    defaultValue={
+                                      ProfileData?.post_graduation_program_name
+                                    }
+                                    name="post_graduation_program_name"
+                                    onChange={(e) => handleChange(e)}
+                                    placeholder="NA"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="mt-3">
+                            {/* <button
+                            type="button"
+                            className="theme_btn transparent">
+                            Edit
+                            <span></span>
+                          </button> */}
+
+                            {isSubmitted && isSubmitted1 ? (
+                              <p>Form submitted successfully!</p>
+                            ) : (
+                              ""
+                            )}
+                            <button
+                              onClick={(e) => {
+                                onSubmit(e);
+                                handleSubmit(e);
+                                SubmitTestForm();
+                              }}
+                              type="button"
+                              className="theme_btn edit_btn"
+                            >
+                              Save & Submit1
+                              <span></span>
+                            </button>
+                          </div>
+                        </form>
                       </div>
                     </div>
                     <div className="col-lg-4">
                       <div className="summary-table mb-5">
-                        <h2 className="text-center mb-4">Having doubts?</h2>
+                        <a
+                          style={{
+                            textDecoration: "none",
+                            color: "#fff",
+                            display: "flex",
+                            justifyContent: "center",
+                            width: "80%",
+                            marginLeft: "10%",
+                          }}
+                          className="theme_btn"
+                          onClick={() =>
+                            document.getElementById("v-pills-home-tab").click()
+                          }
+                        >
+                          Upload joining documents
+                          <img
+                            src={SvgArrow}
+                            className="partners-img"
+                            alt=""
+                            width="30px"
+                          />
+                          <span></span>
+                        </a>
+                        <h2 className="text-center mb-4 mt-4">
+                          Having doubts?
+                        </h2>
                         <div
                           className="table-responsive-xl
-                                                special-inclusions-table">
+                                                special-inclusions-table"
+                        >
                           <div className="having-doughts-sec">
-                            <p className="text-center">  Get in touch with our counselor</p>
+                            <p className="text-center">
+                              {" "}
+                              Get in touch with our counselor
+                            </p>
                             <div className="call-session">
                               <p>Email us!</p>
                               <p className="number-cell">
@@ -444,7 +734,8 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                   className="tab-pane fade  col-lg-12 basket-banner"
                   id="v-pills-home"
                   role="tabpanel"
-                  aria-labelledby="v-pills-home-tab">
+                  aria-labelledby="v-pills-home-tab"
+                >
                   <div className="row basket-row pt-3">
                     <div className="col-lg-8">
                       <div className="range-slider-sec calculator-sec">
@@ -473,23 +764,36 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                               </div>
                             </div>
                             <div className="col-lg-6">
-                            <div className="dashboard-content"> <h2 className="h2">Hi Rahul N,</h2></div>
-                              <p>Please complete your profile and more subtext here</p>
+                              <div className="dashboard-content">
+                                {" "}
+                                <h2 className="h2">Hi Rahul N,</h2>
+                              </div>
+                              <p>
+                                Please complete your profile and more subtext
+                                here
+                              </p>
                             </div>
                           </div>
                           {/* <div className="dashboard-content"> <h2 className="h2">Skills</h2></div> */}
-                          <div>   <img
-                                    className="profile-pic"
-                                    src={SkillGroup}
-                                  /></div>
-                          <div className="dashboard-content"> <h2 className="h2">Upload documents</h2></div>
-                          <div className="dashboard-content"> <h3 className="h3">Identification documents</h3></div>
+                          <div>
+                            {" "}
+                            <img className="profile-pic" src={SkillGroup} />
+                          </div>
+                          <div className="dashboard-content">
+                            {" "}
+                            <h2 className="h2">Upload documents</h2>
+                          </div>
+                          <div className="dashboard-content">
+                            {" "}
+                            <h3 className="h3">Identification documents</h3>
+                          </div>
                           <div className="row upload_docs_wrappper">
                             <div className="col-lg-6 col-md-8 col-sm-12 upload_space">
                               <div
                                 className={`upload-buttons ${
                                   fileSelected1 ? "selected" : ""
-                                } ${fileUploaded1 ? "after-upload" : ""}`}>
+                                } ${fileUploaded1 ? "after-upload" : ""}`}
+                              >
                                 <div className="form-group">
                                   <label htmlFor="exampleFormControlFile1">
                                     {fileUploaded1 === true ? (
@@ -520,7 +824,8 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                                       {!selectedFile1 && submitClicked && (
                                         <p
                                           style={{ color: "red" }}
-                                          className="formErrors">
+                                          className="formErrors"
+                                        >
                                           Please select a file*
                                         </p>
                                       )}
@@ -539,7 +844,8 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                               <div
                                 className={`upload-buttons ${
                                   fileSelected2 ? "selected" : ""
-                                } ${fileUploaded2 ? "after-upload" : ""}`}>
+                                } ${fileUploaded2 ? "after-upload" : ""}`}
+                              >
                                 <div className="form-group">
                                   <label htmlFor="exampleFormControlFile2">
                                     {fileUploaded2 === true ? (
@@ -571,7 +877,8 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                                       {!selectedFile2 && submitClicked && (
                                         <p
                                           style={{ color: "red" }}
-                                          className="formErrors">
+                                          className="formErrors"
+                                        >
                                           Please select a file*
                                         </p>
                                       )}
@@ -586,14 +893,13 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                                   />
                                 </div>
                               </div>
-
-                           
                             </div>
                             <div className="col-lg-6 col-md-8 col-sm-12 upload_space">
                               <div
                                 className={`upload-buttons ${
                                   fileSelected4 ? "selected" : ""
-                                } ${fileUploaded4 ? "after-upload" : ""}`}>
+                                } ${fileUploaded4 ? "after-upload" : ""}`}
+                              >
                                 <div className="form-group">
                                   <label htmlFor="exampleFormControlFile5">
                                     {fileUploaded4 === true ? (
@@ -625,7 +931,8 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                                       {!selectedFile4 && submitClicked && (
                                         <p
                                           style={{ color: "red" }}
-                                          className="formErrors">
+                                          className="formErrors"
+                                        >
                                           Please select a file*
                                         </p>
                                       )}
@@ -644,7 +951,8 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                               <div
                                 className={`upload-buttons ${
                                   fileSelected5 ? "selected" : ""
-                                } ${fileUploaded5 ? "after-upload" : ""}`}>
+                                } ${fileUploaded5 ? "after-upload" : ""}`}
+                              >
                                 <div className="form-group">
                                   <label htmlFor="exampleFormControlFile6">
                                     {fileUploaded5 === true ? (
@@ -676,7 +984,8 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                                       {!selectedFile5 && submitClicked && (
                                         <p
                                           style={{ color: "red" }}
-                                          className="formErrors">
+                                          className="formErrors"
+                                        >
                                           Please select a file*
                                         </p>
                                       )}
@@ -691,8 +1000,6 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                                   />
                                 </div>
                               </div>
-
-
                             </div>
                             <div className="mt-3 background_detail_submit">
                               {/* <button
@@ -705,13 +1012,16 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                               </button> */}
                             </div>
                           </div>
-                          <div className="dashboard-content"><h3 className="h3">Education</h3></div>
+                          <div className="dashboard-content">
+                            <h3 className="h3">Education</h3>
+                          </div>
                           <div className="row upload_docs_wrappper">
                             <div className="col-lg-6 col-md-8 col-sm-12 upload_space">
                               <div
                                 className={`upload-buttons ${
                                   fileSelected1 ? "selected" : ""
-                                } ${fileUploaded1 ? "after-upload" : ""}`}>
+                                } ${fileUploaded1 ? "after-upload" : ""}`}
+                              >
                                 <div className="form-group">
                                   <label htmlFor="exampleFormControlFile1">
                                     {fileUploaded1 === true ? (
@@ -742,7 +1052,8 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                                       {!selectedFile1 && submitClicked && (
                                         <p
                                           style={{ color: "red" }}
-                                          className="formErrors">
+                                          className="formErrors"
+                                        >
                                           Please select a file*
                                         </p>
                                       )}
@@ -757,16 +1068,13 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                                   />
                                 </div>
                               </div>
-
-
-
-
                             </div>
                             <div className="col-lg-6 col-md-8 col-sm-12 upload_space">
                               <div
                                 className={`upload-buttons ${
                                   fileSelected4 ? "selected" : ""
-                                } ${fileUploaded4 ? "after-upload" : ""}`}>
+                                } ${fileUploaded4 ? "after-upload" : ""}`}
+                              >
                                 <div className="form-group">
                                   <label htmlFor="exampleFormControlFile5">
                                     {fileUploaded4 === true ? (
@@ -798,7 +1106,8 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                                       {!selectedFile4 && submitClicked && (
                                         <p
                                           style={{ color: "red" }}
-                                          className="formErrors">
+                                          className="formErrors"
+                                        >
                                           Please select a file*
                                         </p>
                                       )}
@@ -813,8 +1122,6 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                                   />
                                 </div>
                               </div>
-
-
                             </div>
                             <div className="mt-3 background_detail_submit">
                               {/* <button
@@ -828,19 +1135,22 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                             </div>
                           </div>
                           <button
-                        // onClick={}
-                        className="add-button"
-                      >
-                        Add
-                      </button>
-                          <div className="dashboard-content"><h3 className="h3">Skills</h3></div>
+                            // onClick={}
+                            className="add-button"
+                          >
+                            Add
+                          </button>
+                          <div className="dashboard-content">
+                            <h3 className="h3">Skills</h3>
+                          </div>
 
                           <div className="row upload_docs_wrappper">
                             <div className="col-lg-6 col-md-8 col-sm-12 upload_space">
                               <div
                                 className={`upload-buttons ${
                                   fileSelected1 ? "selected" : ""
-                                } ${fileUploaded1 ? "after-upload" : ""}`}>
+                                } ${fileUploaded1 ? "after-upload" : ""}`}
+                              >
                                 <div className="form-group">
                                   <label htmlFor="exampleFormControlFile1">
                                     {fileUploaded1 === true ? (
@@ -871,7 +1181,8 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                                       {!selectedFile1 && submitClicked && (
                                         <p
                                           style={{ color: "red" }}
-                                          className="formErrors">
+                                          className="formErrors"
+                                        >
                                           Please select a file*
                                         </p>
                                       )}
@@ -886,12 +1197,8 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                                   />
                                 </div>
                               </div>
-
-
-
-
                             </div>
-                          
+
                             <div className="mt-3 background_detail_submit">
                               {/* <button
                                 type="button"
@@ -904,18 +1211,21 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                             </div>
                           </div>
                           <button
-                        // onClick={}
-                        className="add-button"
-                      >
-                        Add
-                      </button>
-                          <div className="dashboard-content"><h3 className="h3">any career break?</h3></div>
+                            // onClick={}
+                            className="add-button"
+                          >
+                            Add
+                          </button>
+                          <div className="dashboard-content">
+                            <h3 className="h3">any career break?</h3>
+                          </div>
                           <div className="row upload_docs_wrappper">
                             <div className="col-lg-6 col-md-8 col-sm-12 upload_space">
                               <div
                                 className={`upload-buttons ${
                                   fileSelected1 ? "selected" : ""
-                                } ${fileUploaded1 ? "after-upload" : ""}`}>
+                                } ${fileUploaded1 ? "after-upload" : ""}`}
+                              >
                                 <div className="form-group">
                                   <label htmlFor="exampleFormControlFile1">
                                     {fileUploaded1 === true ? (
@@ -946,7 +1256,8 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                                       {!selectedFile1 && submitClicked && (
                                         <p
                                           style={{ color: "red" }}
-                                          className="formErrors">
+                                          className="formErrors"
+                                        >
                                           Please select a file*
                                         </p>
                                       )}
@@ -965,7 +1276,8 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                               <div
                                 className={`upload-buttons ${
                                   fileSelected2 ? "selected" : ""
-                                } ${fileUploaded2 ? "after-upload" : ""}`}>
+                                } ${fileUploaded2 ? "after-upload" : ""}`}
+                              >
                                 <div className="form-group">
                                   <label htmlFor="exampleFormControlFile2">
                                     {fileUploaded2 === true ? (
@@ -997,7 +1309,8 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                                       {!selectedFile2 && submitClicked && (
                                         <p
                                           style={{ color: "red" }}
-                                          className="formErrors">
+                                          className="formErrors"
+                                        >
                                           Please select a file*
                                         </p>
                                       )}
@@ -1012,14 +1325,13 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                                   />
                                 </div>
                               </div>
-
-                           
                             </div>
                             <div className="col-lg-6 col-md-8 col-sm-12 upload_space">
                               <div
                                 className={`upload-buttons ${
                                   fileSelected4 ? "selected" : ""
-                                } ${fileUploaded4 ? "after-upload" : ""}`}>
+                                } ${fileUploaded4 ? "after-upload" : ""}`}
+                              >
                                 <div className="form-group">
                                   <label htmlFor="exampleFormControlFile5">
                                     {fileUploaded4 === true ? (
@@ -1051,7 +1363,8 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                                       {!selectedFile4 && submitClicked && (
                                         <p
                                           style={{ color: "red" }}
-                                          className="formErrors">
+                                          className="formErrors"
+                                        >
                                           Please select a file*
                                         </p>
                                       )}
@@ -1070,7 +1383,8 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                               <div
                                 className={`upload-buttons ${
                                   fileSelected5 ? "selected" : ""
-                                } ${fileUploaded5 ? "after-upload" : ""}`}>
+                                } ${fileUploaded5 ? "after-upload" : ""}`}
+                              >
                                 <div className="form-group">
                                   <label htmlFor="exampleFormControlFile6">
                                     {fileUploaded5 === true ? (
@@ -1102,7 +1416,8 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                                       {!selectedFile5 && submitClicked && (
                                         <p
                                           style={{ color: "red" }}
-                                          className="formErrors">
+                                          className="formErrors"
+                                        >
                                           Please select a file*
                                         </p>
                                       )}
@@ -1117,8 +1432,6 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                                   />
                                 </div>
                               </div>
-
-
                             </div>
                             <div className="mt-3 background_detail_submit">
                               {/* <button
@@ -1406,14 +1719,14 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                         </div>
 
                         <div className="mt-3"> */}
-                          {/* <button
+                      {/* <button
                             type="button"
                             className="theme_btn transparent">
                             Edit
                             <span></span>
                           </button> */}
 
-                          {/* {isSubmitted  && isSubmitted1 ? (
+                      {/* {isSubmitted  && isSubmitted1 ? (
                             <p>Form submitted successfully!</p>
                           ) : (
                             ""
@@ -1441,7 +1754,8 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                         <h2 className="text-center mb-4">Having doubts?</h2>
                         <div
                           className="table-responsive-xl
-                                                special-inclusions-table">
+                                                special-inclusions-table"
+                        >
                           <div className="having-doughts-sec">
                             <p className="text-center">
                               Get in touch with our counselor
@@ -1472,12 +1786,14 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                   className="tab-pane fade basket-banner"
                   id="v-pills-messages"
                   role="tabpanel"
-                  aria-labelledby="v-pills-messages-tab">
+                  aria-labelledby="v-pills-messages-tab"
+                >
                   <div className="row basket-row pt-0">
-                  <div className="col-lg-8">
+                    <div className="col-lg-8">
                       <div
                         className="verticle-timeline
-                                            col-lg-10">
+                                            col-lg-10"
+                      >
                         <div className="dashboard-content ml-3 mb-3">
                           <h2 className="h2">Your roadmap</h2>
                         </div>
@@ -1491,17 +1807,20 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                                     Enter the batch
                                   </h4>
                                 </a>
-                                <p>Register and join the batch on Salaryfy's website or app.</p>
+                                <p>
+                                  Register and join the batch on Salaryfy's
+                                  website or app.
+                                </p>
                               </div>
                             </div>
-                            
+
                             <div
                               className="timeline-container
-                                                        warning">
+                                                        warning"
+                            >
                               <div className="timeline-icon"></div>
 
-                              <div
-                                className="timeline-icon"></div>
+                              <div className="timeline-icon"></div>
                               <div className="timeline-body">
                                 <a href="#">
                                   <h4 className="timeline-title">
@@ -1516,7 +1835,8 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                             </div>
                             <div
                               className="timeline-container
-                                                        warning">
+                                                        warning"
+                            >
                               <div className="timeline-icon"></div>
                               <div className="timeline-body">
                                 <a href="#">
@@ -1640,7 +1960,8 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                         <h2 className="text-center mb-4">Having doubts?</h2>
                         <div
                           className="table-responsive-xl
-                                                special-inclusions-table">
+                                                special-inclusions-table"
+                        >
                           <div className="having-doughts-sec">
                             <p className="text-center">
                               Get in touch with our counselor
@@ -1676,7 +1997,8 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
 
       <section
         className="eligiblity-form-sec student-dashboard select-plan
-            range-slider-plan five_show">
+            range-slider-plan five_show"
+      >
         <div className="">
           <div className="row">
             <div className="col-lg-1 col-12 order-2 mobile_tab_bottom_menu">
@@ -1684,7 +2006,8 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                 className="nav flex-column nav-pills"
                 id="v-pills-tab"
                 role="tablist"
-                aria-orientation="vertical">
+                aria-orientation="vertical"
+              >
                 <a
                   className="nav-link active"
                   id="v-pills-profile-1-tab"
@@ -1692,7 +2015,8 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                   href="#v-pills-profile-1"
                   role="tab"
                   aria-controls="v-pills-profile-1"
-                  aria-selected="true">
+                  aria-selected="true"
+                >
                   <img src={dlOne} alt="icon" className="green-icon" />{" "}
                   <img src={HomeGreen} alt="icon" className="white-icon" />{" "}
                 </a>
@@ -1703,7 +2027,8 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                   href="#v-pills-home-1"
                   role="tab"
                   aria-controls="v-pills-home-1"
-                  aria-selected="false">
+                  aria-selected="false"
+                >
                   <img src={dlTwo} alt="icon" className="green-icon" />{" "}
                   <img src={Document} alt="icon" className="white-icon" />
                 </a>
@@ -1714,7 +2039,8 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                   href="#v-pills-messages-one"
                   role="tab"
                   aria-controls="v-pills-messages-one"
-                  aria-selected="false">
+                  aria-selected="false"
+                >
                   <img src={dlThree} alt="icon" className="green-icon" />{" "}
                   <img src={process} alt="icon" className="white-icon" />
                 </a>
@@ -1728,7 +2054,8 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                   href="#v-pills-home"
                   role="tab"
                   aria-controls="v-pills-home"
-                  aria-selected="true">
+                  aria-selected="true"
+                >
                   <img src={logOut} alt="icon" className="green-icon" />
                 </a>
               </div>
@@ -1736,12 +2063,14 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
             <div className="col-lg-10 m-auto col-12 order-1">
               <div
                 className="tab-content edit_dashboard_content mobile_tab_content_show"
-                id="v-pills-tabContent">
+                id="v-pills-tabContent"
+              >
                 <div
                   className="tab-pane fade  col-lg-9 m-auto"
                   id="v-pills-home-1"
                   role="tabpanel"
-                  aria-labelledby="v-pills-home-1-tab">
+                  aria-labelledby="v-pills-home-1-tab"
+                >
                   <form>
                     <div className="row basket-row">
                       <div className="col-lg-8">
@@ -1777,7 +2106,8 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                                 <div
                                   className={`upload-buttons ${
                                     fileSelected1 ? "selected" : ""
-                                  } ${fileUploaded1 ? "after-upload" : ""}`}>
+                                  } ${fileUploaded1 ? "after-upload" : ""}`}
+                                >
                                   <div className="form-group">
                                     <label htmlFor="exampleFormControlFile1">
                                       {fileUploaded1 === true ? (
@@ -1808,7 +2138,8 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                                         {!selectedFile1 && submitClicked && (
                                           <p
                                             style={{ color: "red" }}
-                                            className="formErrors">
+                                            className="formErrors"
+                                          >
                                             Please select a file*
                                           </p>
                                         )}
@@ -1827,7 +2158,8 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                                 <div
                                   className={`upload-buttons ${
                                     fileSelected2 ? "selected" : ""
-                                  } ${fileUploaded2 ? "after-upload" : ""}`}>
+                                  } ${fileUploaded2 ? "after-upload" : ""}`}
+                                >
                                   <div className="form-group">
                                     <label htmlFor="exampleFormControlFile2">
                                       {fileUploaded2 === true ? (
@@ -1859,7 +2191,8 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                                         {!selectedFile2 && submitClicked && (
                                           <p
                                             style={{ color: "red" }}
-                                            className="formErrors">
+                                            className="formErrors"
+                                          >
                                             Please select a file*
                                           </p>
                                         )}
@@ -1878,7 +2211,8 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                                 <div
                                   className={`upload-buttons ${
                                     fileSelected3 ? "selected" : ""
-                                  } ${fileUploaded3 ? "after-upload" : ""}`}>
+                                  } ${fileUploaded3 ? "after-upload" : ""}`}
+                                >
                                   <div className="form-group">
                                     <label htmlFor="exampleFormControlFile4">
                                       {fileUploaded3 === true ? (
@@ -1909,7 +2243,8 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                                         {!selectedFile3 && submitClicked && (
                                           <p
                                             style={{ color: "red" }}
-                                            className="formErrors">
+                                            className="formErrors"
+                                          >
                                             Please select a file*
                                           </p>
                                         )}
@@ -1929,7 +2264,8 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                                 <div
                                   className={`upload-buttons ${
                                     fileSelected4 ? "selected" : ""
-                                  } ${fileUploaded4 ? "after-upload" : ""}`}>
+                                  } ${fileUploaded4 ? "after-upload" : ""}`}
+                                >
                                   <div className="form-group">
                                     <label htmlFor="exampleFormControlFile5">
                                       {fileUploaded4 === true ? (
@@ -1961,7 +2297,8 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                                         {!selectedFile4 && submitClicked && (
                                           <p
                                             style={{ color: "red" }}
-                                            className="formErrors">
+                                            className="formErrors"
+                                          >
                                             Please select a file*
                                           </p>
                                         )}
@@ -1980,7 +2317,8 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                                 <div
                                   className={`upload-buttons ${
                                     fileSelected5 ? "selected" : ""
-                                  } ${fileUploaded5 ? "after-upload" : ""}`}>
+                                  } ${fileUploaded5 ? "after-upload" : ""}`}
+                                >
                                   <div className="form-group">
                                     <label htmlFor="exampleFormControlFile6">
                                       {fileUploaded5 === true ? (
@@ -2012,7 +2350,8 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                                         {!selectedFile5 && submitClicked && (
                                           <p
                                             style={{ color: "red" }}
-                                            className="formErrors">
+                                            className="formErrors"
+                                          >
                                             Please select a file*
                                           </p>
                                         )}
@@ -2031,7 +2370,8 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                                 <div
                                   className={`upload-buttons ${
                                     fileSelected6 ? "selected" : ""
-                                  } ${fileUploaded6 ? "after-upload" : ""}`}>
+                                  } ${fileUploaded6 ? "after-upload" : ""}`}
+                                >
                                   <div className="form-group">
                                     <label htmlFor="exampleFormControlFile7">
                                       {fileUploaded6 === true ? (
@@ -2060,7 +2400,6 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                                         ) : (
                                           <p className="parag"></p>
                                         )}
-                                       
                                       </div>
                                     </label>
                                     <input
@@ -2074,14 +2413,14 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                                 </div>
                               </div>
                               <div className="mt-3 background_detail_submit">
-                              {/* <button
+                                {/* <button
                                 type="button"
                                 className="theme_btn edit_btn"
                                 onClick={handleSubmit}>
                                 Save
                                 <span></span>
                               </button> */}
-                            </div>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -2094,15 +2433,16 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                             <div className="col-lg-6">
                               <div
                                 className="select-block
-                                            input-form">
+                                            input-form"
+                              >
                                 <div className="">
                                   <div className="form-group">
                                     <label htmlFor="">Name</label>
                                     <span
-                                        style={{ color: "red" }}
-                                        className="formErrors"
-                                         >
-                                       {formErrors.name}
+                                      style={{ color: "red" }}
+                                      className="formErrors"
+                                    >
+                                      {formErrors.name}
                                     </span>
                                     <input
                                       type="text"
@@ -2130,10 +2470,10 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                                   <div className="form-group">
                                     <label htmlFor="">City</label>
                                     <span
-                                        style={{ color: "red" }}
-                                        className="formErrors"
-                                         >
-                                        {formErrors.city}
+                                      style={{ color: "red" }}
+                                      className="formErrors"
+                                    >
+                                      {formErrors.city}
                                     </span>
                                     <input
                                       type="text"
@@ -2148,10 +2488,10 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                                   <div className="form-group">
                                     <label htmlFor="">Gender</label>
                                     <span
-                                        style={{ color: "red" }}
-                                        className="formErrors"
-                                         >
-                                       {formErrors.gender}
+                                      style={{ color: "red" }}
+                                      className="formErrors"
+                                    >
+                                      {formErrors.gender}
                                     </span>
                                     <input
                                       type="text"
@@ -2166,10 +2506,10 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                                   <div className="form-group">
                                     <label htmlFor="">Age</label>
                                     <span
-                                        style={{ color: "red" }}
-                                        className="formErrors"
-                                         >
-                                       {formErrors.age}
+                                      style={{ color: "red" }}
+                                      className="formErrors"
+                                    >
+                                      {formErrors.age}
                                     </span>
                                     <input
                                       type="number"
@@ -2189,12 +2529,12 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                                   <label htmlFor="">
                                     Registered email address
                                   </label>
-                                      <span
-                                        style={{ color: "red" }}
-                                        className="formErrors"
-                                         >
-                                       {formErrors.email}
-                                    </span>
+                                  <span
+                                    style={{ color: "red" }}
+                                    className="formErrors"
+                                  >
+                                    {formErrors.email}
+                                  </span>
                                   <input
                                     type="text"
                                     className="form-control"
@@ -2209,11 +2549,11 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                                     Alternate Contact no.
                                   </label>
                                   <span
-                                        style={{ color: "red" }}
-                                        className="formErrors"
-                                         >
-                                       {formErrors.alternate_number}
-                                    </span>
+                                    style={{ color: "red" }}
+                                    className="formErrors"
+                                  >
+                                    {formErrors.alternate_number}
+                                  </span>
                                   <input
                                     type="tel"
                                     maxLength="10"
@@ -2229,17 +2569,15 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                                     Graduation Program Name
                                   </label>
                                   <span
-                                        style={{ color: "red" }}
-                                        className="formErrors"
-                                         >
-                                       {formErrors.gradProName}
-                                    </span>
+                                    style={{ color: "red" }}
+                                    className="formErrors"
+                                  >
+                                    {formErrors.gradProName}
+                                  </span>
                                   <input
                                     type="text"
                                     className="form-control"
-                                    defaultValue={
-                                      ProfileData?.gradProName
-                                    }
+                                    defaultValue={ProfileData?.gradProName}
                                     name="gradProName"
                                     onChange={(e) => handleChange(e)}
                                     placeholder="NA"
@@ -2251,7 +2589,8 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                                     Post Graduation Program Name (if any)
                                   </label>
                                   <input
-                                    type="text" className="form-control"
+                                    type="text"
+                                    className="form-control"
                                     defaultValue={
                                       ProfileData?.post_graduation_program_name
                                     }
@@ -2271,48 +2610,47 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                             <div className="col-lg-6">
                               <div
                                 className="select-block
-                                            input-form">
+                                            input-form"
+                              >
                                 <div className="">
                                   <div className="form-group">
                                     <label htmlFor="">
                                       Bank account number
                                     </label>
                                     <span
-                                    style={{ color: "red" }}
-                                    className="formErrors"
+                                      style={{ color: "red" }}
+                                      className="formErrors"
                                     >
-                                       {formErrors.bank_account_number}
+                                      {formErrors.bank_account_number}
                                     </span>
                                     <input
-                                    type="number"
-                                    className="form-control"
-                                    defaultValue={
-                                      ProfileData?.bank_account_number
-                                    }
-                                    name="bank_account_number"
-                                    onChange={(e) => handleChange(e)}
-                                    placeholder="167383949047757"
-                                  />
+                                      type="number"
+                                      className="form-control"
+                                      defaultValue={
+                                        ProfileData?.bank_account_number
+                                      }
+                                      name="bank_account_number"
+                                      onChange={(e) => handleChange(e)}
+                                      placeholder="167383949047757"
+                                    />
                                   </div>
 
                                   <div className="form-group">
                                     <label htmlFor="">IFSC code</label>
                                     <span
-                                        style={{ color: "red" }}
-                                        className="formErrors"
-                                         >
-                                       {formErrors.ifsc_number}
+                                      style={{ color: "red" }}
+                                      className="formErrors"
+                                    >
+                                      {formErrors.ifsc_number}
                                     </span>
                                     <input
-                                    type="text"
-                                    className="form-control"
-                                    defaultValue={
-                                      ProfileData?.ifsc_number
-                                    }
-                                    name="ifsc_number"
-                                    onChange={(e) => handleChange(e)}
-                                    placeholder="GHDJ1234"
-                                  />
+                                      type="text"
+                                      className="form-control"
+                                      defaultValue={ProfileData?.ifsc_number}
+                                      name="ifsc_number"
+                                      onChange={(e) => handleChange(e)}
+                                      placeholder="GHDJ1234"
+                                    />
                                   </div>
                                 </div>
                               </div>
@@ -2322,63 +2660,59 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                                 <div className="form-group">
                                   <label htmlFor="">Bank name</label>
                                   <span
-                                        style={{ color: "red" }}
-                                        className="formErrors"
-                                         >
-                                       {formErrors.bank_name}
-                                    </span>
-                                    <input
-                                  type="text"
-                                  className="form-control"
-                                  defaultValue={
-                                    ProfileData?.bank_name
-                                  }
-                                  name="bank_name"
-                                  onChange={(e) => handleChange(e)}
-                                  placeholder="PnB India"
-                                />
+                                    style={{ color: "red" }}
+                                    className="formErrors"
+                                  >
+                                    {formErrors.bank_name}
+                                  </span>
+                                  <input
+                                    type="text"
+                                    className="form-control"
+                                    defaultValue={ProfileData?.bank_name}
+                                    name="bank_name"
+                                    onChange={(e) => handleChange(e)}
+                                    placeholder="PnB India"
+                                  />
                                 </div>
                                 <div className="form-group">
                                   <label htmlFor="">Bank brach name</label>
-                                    <span
-                                        style={{ color: "red" }}
-                                        className="formErrors"
-                                         >
+                                  <span
+                                    style={{ color: "red" }}
+                                    className="formErrors"
+                                  >
                                     {formErrors.bank_branch_name}
-                                    </span>
-                                    <input
-                                  type="text"
-                                  className="form-control"
-                                  defaultValue={
-                                    ProfileData?.bank_branch_name
-                                  }
-                                  name="bank_branch_name"
-                                  onChange={(e) => handleChange(e)}
-                                  placeholder="6th"
-                                />
+                                  </span>
+                                  <input
+                                    type="text"
+                                    className="form-control"
+                                    defaultValue={ProfileData?.bank_branch_name}
+                                    name="bank_branch_name"
+                                    onChange={(e) => handleChange(e)}
+                                    placeholder="6th"
+                                  />
                                 </div>
                               </div>
                             </div>
                           </div>
 
                           <div className="mt-3">
-                          {isSubmitted ? (
-                            <p>Form submitted successfully!</p>
-                          ) : (
-                            ""
-                          )}
+                            {isSubmitted ? (
+                              <p>Form submitted successfully!</p>
+                            ) : (
+                              ""
+                            )}
                             <button
-                            onClick={(e) => {
-                              onSubmit(e);
-                              handleSubmit(e);
-                              SubmitTestForm()
+                              onClick={(e) => {
+                                onSubmit(e);
+                                handleSubmit(e);
+                                SubmitTestForm();
                               }}
-                            type="button"
-                            className="theme_btn edit_btn"
-                          >
-                            Save & Submit
-                            <span></span>
-                          </button>
+                              type="button"
+                              className="theme_btn edit_btn"
+                            >
+                              Save & Submit
+                              <span></span>
+                            </button>
                           </div>
                         </form>
                       </div>
@@ -2389,7 +2723,8 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                   className="tab-pane fade show active basket-banner"
                   id="v-pills-profile-1"
                   role="tabpanel"
-                  aria-labelledby="v-pills-profile-1-tab">
+                  aria-labelledby="v-pills-profile-1-tab"
+                >
                   <div className="row">
                     <div className="col-lg-8">
                       <div className="dashboard-content edit_home">
@@ -2416,7 +2751,8 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                               .getElementById("v-pills-home-1-tab")
                               .click();
                           }}
-                          className="theme_btn">
+                          className="theme_btn"
+                        >
                           Complete your profile
                           <img src={SvgArrow} className="partners-img" alt="" />
                           <span></span>
@@ -2430,12 +2766,14 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                   className="tab-pane fade basket-banner"
                   id="v-pills-messages-one"
                   role="tabpanel"
-                  aria-labelledby="v-pills-messages-one-tab">
+                  aria-labelledby="v-pills-messages-one-tab"
+                >
                   <div className="row basket-row">
                     <div className="col-lg-8">
                       <div
                         className="verticle-timeline
-                                            col-lg-10">
+                                            col-lg-10"
+                      >
                         <div className="dashboard-content ml-3 mb-3">
                           <h2 className="h2">Your roadmap</h2>
                         </div>
@@ -2449,17 +2787,20 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                                     Enter the batch
                                   </h4>
                                 </a>
-                                <p>Register and join the batch on Salaryfy's website or app.</p>
+                                <p>
+                                  Register and join the batch on Salaryfy's
+                                  website or app.
+                                </p>
                               </div>
                             </div>
-                            
+
                             <div
                               className="timeline-container
-                                                        warning">
+                                                        warning"
+                            >
                               <div className="timeline-icon"></div>
 
-                              <div
-                                className="timeline-icon"></div>
+                              <div className="timeline-icon"></div>
                               <div className="timeline-body">
                                 <a href="#">
                                   <h4 className="timeline-title">
@@ -2474,7 +2815,8 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                             </div>
                             <div
                               className="timeline-container
-                                                        warning">
+                                                        warning"
+                            >
                               <div className="timeline-icon"></div>
                               <div className="timeline-body">
                                 <a href="#">
