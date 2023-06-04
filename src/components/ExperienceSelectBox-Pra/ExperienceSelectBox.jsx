@@ -241,7 +241,7 @@ const handleClickChnage=()=>{
         </div>
       </section>
       
-      <div><div className="experience-comment-title">Candidates who opted our Services</div>
+      <div className="mb-3"> <div className="experience-comment-title">Candidates who opted our Services</div>
           <div><img src={comment} alt="comment" /></div></div>
     </div>
   );
