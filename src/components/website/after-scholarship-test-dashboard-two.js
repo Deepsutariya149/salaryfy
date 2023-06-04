@@ -388,17 +388,7 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                         <h2 className="h2">Hi {userName}, </h2>
 
                         <p className="para">
-                          Welcome to Salaryfy Learning Centre. You dashboard
-                          will be 1 week prior to your batch commencement date.
-                        </p>
-
-                        <p>
-                          <b>Batch Commencement: 15/04/2023</b>
-                        </p>
-
-                        <p>
-                          It is recommended that you complete your profile &
-                          documents prior the classes.
+                          Our placement manager will get in touch with you within 24 hours, meanwhile please check and complete your profile.
                         </p>
 
                         <div className="after-sc-profile-info-container">
@@ -466,9 +456,9 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                           </div>
                         </div>
                         <form className="after-sc-form-container">
-                          <div className="dashboard-content">
+                          {/* <div className="dashboard-content">
                             <h2 className="h2">Profile</h2>
-                          </div>
+                          </div> */}
                           <div className="row">
                             <div className="col-lg-6">
                               <div
@@ -477,7 +467,7 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                               >
                                 <div className="">
                                   <div className="form-group">
-                                    <label htmlFor="">Name</label>
+                                    <label htmlFor="">Duration of Career Break</label>
                                     <span
                                       style={{ color: "red" }}
                                       className="formErrors"
@@ -490,12 +480,12 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                                       defaultValue={ProfileData?.name}
                                       name="name"
                                       onChange={(e) => handleChange(e)}
-                                      placeholder="Name"
+                                      placeholder="0 Year 6 Months"
                                     />
                                   </div>
 
                                   <div className="form-group">
-                                    <label htmlFor="">Phone number</label>
+                                    <label htmlFor="">Previous Designation</label>
                                     <input
                                       type="text"
                                       className="form-control"
@@ -503,30 +493,12 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                                       name="phone"
                                       readOnly={isReadOnly}
                                       onChange={(e) => handleChange(e)}
-                                      placeholder="+91 xxxx xxxx"
+                                      placeholder="UI/UX Designer"
                                     />
                                   </div>
 
                                   <div className="form-group">
-                                    <label htmlFor="">City</label>
-                                    <span
-                                      style={{ color: "red" }}
-                                      className="formErrors"
-                                    >
-                                      {formErrors.city}
-                                    </span>
-                                    <input
-                                      type="text"
-                                      className="form-control"
-                                      defaultValue={ProfileData?.city}
-                                      name="city"
-                                      onChange={(e) => handleChange(e)}
-                                      placeholder="City"
-                                    />
-                                  </div>
-
-                                  <div className="form-group">
-                                    <label htmlFor="">Gender</label>
+                                    <label htmlFor="">Years of Working Experience</label>
                                     <span
                                       style={{ color: "red" }}
                                       className="formErrors"
@@ -539,12 +511,12 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                                       defaultValue={ProfileData?.gender}
                                       name="gender"
                                       onChange={(e) => handleChange(e)}
-                                      placeholder="Gender"
+                                      placeholder="6 Years 3 Months"
                                     />
                                   </div>
 
-                                  <div className="form-group">
-                                    <label htmlFor="">Age</label>
+                                  {/* <div className="form-group">
+                                    <label htmlFor="">Available to join immediately</label>
                                     <span
                                       style={{ color: "red" }}
                                       className="formErrors"
@@ -559,7 +531,22 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                                       onChange={(e) => handleChange(e)}
                                       placeholder="23"
                                     />
-                                  </div>
+                                  </div> */}
+                                  <div className="form-group">
+                                  <label htmlFor="">
+                                    Highest level of education
+                                  </label>
+                                  <input
+                                    type="text"
+                                    className="form-control"
+                                    defaultValue={
+                                      ProfileData?.post_graduation_program_name
+                                    }
+                                    name="post_graduation_program_name"
+                                    onChange={(e) => handleChange(e)}
+                                    placeholder="NA"
+                                  />
+                                </div>
                                 </div>
                               </div>
                             </div>
@@ -567,7 +554,7 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                               <div className="select-block input-form">
                                 <div className="form-group">
                                   <label htmlFor="">
-                                    Registered email address
+                                    Last Company
                                   </label>
                                   <span
                                     style={{ color: "red" }}
@@ -581,12 +568,12 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                                     defaultValue={ProfileData?.email}
                                     onChange={(e) => handleChange(e)}
                                     name="email"
-                                    placeholder="rahaul@gmail.com"
+                                    placeholder="Company name"
                                   />
                                 </div>
                                 <div className="form-group">
                                   <label htmlFor="">
-                                    Alternate Contact no.
+                                    Last Drawn Salary(in LPA)
                                   </label>
                                   <span
                                     style={{ color: "red" }}
@@ -600,13 +587,13 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                                     name="alternate_number"
                                     className="form-control"
                                     onChange={(e) => handleChange(e)}
-                                    placeholder="9894768594"
+                                    placeholder="8.5"
                                     defaultValue={ProfileData?.alternate_number}
                                   />
                                 </div>
                                 <div className="form-group">
                                   <label htmlFor="">
-                                    Graduation Program Name
+                                    Current Residing Place
                                   </label>
                                   <span
                                     style={{ color: "red" }}
@@ -620,13 +607,13 @@ const AfterScholarshipTestDashboardTwo = (isReadOnly) => {
                                     defaultValue={ProfileData?.gradProName}
                                     name="gradProName"
                                     onChange={(e) => handleChange(e)}
-                                    placeholder="NA"
+                                    placeholder="Gurugram"
                                   />
                                 </div>
 
                                 <div className="form-group">
                                   <label htmlFor="">
-                                    Post Graduation Program Name (if any)
+                                    Highest level of education
                                   </label>
                                   <input
                                     type="text"

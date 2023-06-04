@@ -48,7 +48,9 @@ const BasketPaymentTwo = () => {
 
   const navigate = useNavigate()
 
-  
+  const termsClick = () => {
+    navigate("/terms-of-use");
+  };
 
   const initPayment = (data) => {
     const options = {
@@ -208,7 +210,7 @@ const BasketPaymentTwo = () => {
                                         <label
                                           className="form-check-label"
                                           htmlFor="invalidCheck2">
-                                         I have read all the <a href = "#"> Terms & conditions</a> 
+                                         I have read all the <span onClick={termsClick}> Terms & conditions</span> 
                                         </label>
                                       </div>
                                     </div>
