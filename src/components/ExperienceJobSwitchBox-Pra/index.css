@@ -45,8 +45,8 @@
 
 .jobSwitch_inner_container {
     margin: auto;
-    width: 660px;
-    height: 482px;
+    width: 400px;
+    height: 420px;
     left: 426px;
     top: 289px;
 
@@ -60,8 +60,8 @@
     box-sizing: border-box;
 
     position: absolute;
-    width: 660px;
-    height: 84px;
+    width: 400px;
+    height: 125px;
     /* left: 426px; */
     /* top: 289px; */
 
@@ -84,10 +84,29 @@
 
 .jobSwitch_next_container {
     position: relative;
-    width: 90%;
-    margin:100px auto
+    margin:125px auto;
 }
 
+.jobSwitch_next_container_title {
+    display:flex;
+    gap:5px;
+    align-items:center;
+    margin-left: 7%;
+    width: 85%;
+    justify-content:space-between;
+}
+.job-title{
+    color: #5B5B5B;
+}
+.jobSwitch_next_container_title-outer {
+    background: linear-gradient(180deg, rgba(254, 205, 8, 0.07) 0%, rgba(14, 95, 89, 0.19) 100%);
+    border: 1px solid rgba(14, 95, 89, 0.1);
+}
+.jobSwitch_next_container_info {
+    background: linear-gradient(180deg, #0E5F59 0%, #345719 100%);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.08);
+    border-radius: 0px 0px 15px 15px;
+}
 .fifteen_days {
     font-family: 'Lexend';
     font-style: normal;
@@ -154,8 +173,13 @@
  display: flex;
  align-items: center;
  justify-content: space-between;
+ width: 85%;
+ margin-left: 7%;
 }
 
+.jobSwitch_left_right_container_text{
+    color: #FFFFFF;
+}
 .jobSwitch_access_button{
     width: 100%;
     display: flex;

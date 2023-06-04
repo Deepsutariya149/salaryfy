@@ -1,6 +1,6 @@
 import React, { useState, useEfffect } from "react";
 import playButton from "../img/fresher-eligibility-images/play.png";
-import roadMap from "../img/fresher-eligibility-images/roadmap.png";
+import roadMap from "../img/fresher-eligibility-images/road_map_2.03.png";
 import arrow from "../img/fresher-eligibility-images/arrow.png";
 import { Theme, useTheme } from "@mui/material/styles";
 import OutlinedInput from "@mui/material/OutlinedInput";
@@ -13,6 +13,9 @@ import { useNavigate } from "react-router-dom";
 import documentUploadIcon from '../img/documentupload.png'
 import OtpInput from 'react-otp-input';
 import verified from '../img/verified.png';
+import superFastImage from '../img/super_fast_new.png'
+import thunder from '../img/thunder.png'
+import accessButton from '../img/access_now.png'
 
 const EligibilityForm1 = () => {
   const navigate  = useNavigate()
@@ -195,7 +198,81 @@ const EligibilityForm1 = () => {
         <img src={roadMap} alt="road-map" />
       </section>
 
-      <section className="eligibility-form-container">
+      <div className="fresher_eligibility_flex_for_image_container">
+
+<div className="fresher_eligibility_flex_left_panel" style={{width:'38%'}}>
+      <div className="jobSwitch_inner_container">
+                    <div className="jobSwitch_inner_container_title">
+                          <img src={superFastImage} alt="super"/>
+                          {/* <h3 className='jobSwitch_title_bar_title'>Super Fast</h3> */}
+                    </div>
+
+                    <div className='jobSwitch_next_container'>
+                      <div className="jobSwitch_next_container_title-outer">
+                    <div  className="jobSwitch_next_container_title">
+                      <div>
+                      <div style={{display:'flex',gap:'5px',flexDirection:'column'}}>
+                      <span className="job-title">Job change time</span>
+                          <span className='five_hundred_strike'>15 Days</span>
+                      </div>                       
+                      </div>
+                      <div style={{display:'flex',gap:'5px',flexDirection:'column'}}>
+                          <strike className="thousand_strike">₹1000</strike>
+                          <span className="five_hundred_strike">₹500</span>
+                      </div>
+                    </div>
+                    </div>
+                    <div className="jobSwitch_next_container_info">
+                    <div className='jobSwitch_left_right_container'>
+
+                    <div className='jobSwitch_left_list'>
+                      <div className="w-3">
+                          <img src={thunder} alt="thunder" />
+                          <p className="jobSwitch_left_right_container_text">Job switch within 2 months</p>
+                      </div>
+                      <div className="w-3">
+                          <img src={thunder} alt="thunder" />
+                          <p className="jobSwitch_left_right_container_text">Resume <br/> buliding</p>
+                      </div>
+                      <div className="w-3">
+                          <img src={thunder} alt="thunder" />
+                          <p className="jobSwitch_left_right_container_text">Resume <br/> building</p>
+                      </div>
+                      <div className="w-3">
+                          <img src={thunder} alt="thunder" />
+                          <p className="jobSwitch_left_right_container_text">Job fitment analysis</p>
+                      </div>
+                      
+                    </div>
+
+                    <div className='jobSwitch_right_list'>
+                      <div className="w-3">
+                          <img src={thunder} alt="thunder" />
+                          <p className="jobSwitch_left_right_container_text">Expected hike 80%</p>
+                      </div>
+                      <div className="w-3">
+                          <img src={thunder} alt="thunder" />
+                          <p className="jobSwitch_left_right_container_text">Linkedin enhancement</p>
+                      </div>
+                      <div className="w-3">
+                          <img src={thunder} alt="thunder" />
+                          <p className="jobSwitch_left_right_container_text">Other Option Name</p>
+                      </div>
+                      <div className="w-3">
+                          <img src={thunder} alt="thunder" />
+                          <p className="jobSwitch_left_right_container_text">Other Option Name</p>
+                      </div>
+                      
+                    </div>
+
+                    </div>
+                    </div>
+                    </div>
+
+                    
+              </div>
+      </div>
+      <section className="eligibility-form-container" style={{width:'60%'}}>
         <div className="d-none d-xl-block d-lg-block">
           <div className="eligibility-form-first-row">
             <div className="eligibility-form-label-container">
@@ -1338,6 +1415,7 @@ Upload Resume</label>
           </div>
         </div>
       </section>
+    </div>
     </div>
   );
 };
