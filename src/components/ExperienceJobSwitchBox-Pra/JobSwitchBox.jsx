@@ -2,10 +2,13 @@ import React from 'react'
 import superLiteImage from '../img/super_lite.png'
 import tick from '../img/tick_super.png'
 import accessButton from '../img/access_now.png'
-
+import singleComment from '../img/side_single_comment.png'
 const JobSwitchBox = () => {
   return (
-    <div className="container">
+    <div className="container"style={{display:'flex'}}>
+        <div style={{marginTop:'15%',marginRight    :'5%'}}>
+        <img src={singleComment} alt="side_single_comment"/>
+        </div>
         <div className="jobSwitch_container">
         <div className="jobSwitch_title_container_experience">
         <p className="jobSwitch_description">Details for</p>
