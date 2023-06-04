@@ -1,5 +1,4 @@
 import React from 'react'
-import superFastImage from '../img/super_fast.png'
 import superLiteImage from '../img/super_lite.png'
 import tick from '../img/tick_super.png'
 import accessButton from '../img/access_now.png'
@@ -8,17 +7,17 @@ const JobSwitchBox = () => {
   return (
     <div className="container">
         <div className="jobSwitch_container">
-        <div className="jobSwitch_title_container">
+        <div className="jobSwitch_title_container_experience">
         <p className="jobSwitch_description">Details for</p>
          <h3 className="jobSwitch_title">Job Switch Plan</h3>
         </div>
-         <div className="jobSwitch_inner_container">
-              <div className="jobSwitch_inner_container_title">
+         <div className="jobSwitch_inner_container_experience">
+              <div className="jobSwitch_inner_container_title_experience">
                     <img src={superLiteImage} alt="super" style={{marginTop:'20px',marginLeft:'20px'}}/>
                     {/* <h3 className='jobSwitch_title_bar_title'>Super Fast</h3> */}
               </div>
 
-              <div className='jobSwitch_next_container'>
+              <div className='jobSwitch_next_container_experience'>
               <div  style={{display:'flex',gap:'5px',alignItems:'center',justifyContent:'space-between'}}>
                 <div>
                     <h3 className='fifteen_days'>15 Days</h3>
@@ -31,7 +30,7 @@ const JobSwitchBox = () => {
               </div>
               <p>Job change time</p>
 
-              <div className='jobSwitch_left_right_container'>
+              <div className='jobSwitch_left_right_container_experience'>
 
               <div className='jobSwitch_left_list'>
                 <div>

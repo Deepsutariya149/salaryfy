@@ -3,27 +3,44 @@
     height: 632px;
     left: 118px;
     top: 181px;
-
+    padding: 15px;
     background: #FFFFFF;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.08);
     border-radius: 15px;
     margin: 150px 0px 50px 0px;
 }
 
-.jobSwitch_title {
+.jobSwitch_inner_container_experience {
+    margin: auto;
+    width: 660px;
+    height: 482px;
+    left: 426px;
+    top: 289px;
 
+    background: linear-gradient(180deg, rgba(254, 205, 8, 0.07) 0%, rgba(14, 95, 89, 0.19) 100%);
+    border: 1px solid rgba(14, 95, 89, 0.1);
+    border-radius: 15px;
+}
+
+.jobSwitch_title {
     font-family: 'Lexend';
     font-style: normal;
     font-weight: 700;
     font-size: 28px;
     line-height: 101%;
     /* or 28px */
-
-
     color: #005F59;
-
 }
 
+.jobSwitch_inner_container_title_experience {
+    box-sizing: border-box;
+    position: absolute;
+    width: 660px;
+    height: 84px;
+    background: #000000;
+    border: 1px solid rgba(14, 95, 89, 0.1);
+    border-radius: 15px 15px 0px 0px;
+}
 
 .jobSwitch_description {
     font-family: 'Lexend';
@@ -85,6 +102,12 @@
 .jobSwitch_next_container {
     position: relative;
     margin:125px auto;
+}
+
+.jobSwitch_next_container_experience {
+    position: relative;
+    width: 90%;
+    margin:100px auto
 }
 
 .jobSwitch_next_container_title {
@@ -175,6 +198,12 @@
  justify-content: space-between;
  width: 85%;
  margin-left: 7%;
+}
+
+.jobSwitch_left_right_container_experience{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .jobSwitch_left_right_container_text{
