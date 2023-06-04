@@ -350,7 +350,7 @@ const RoutePath = () => {
           element={<ExperienceSelectCategory />}
         />
         <Route
-          path="experience-check-category"
+          path="experience-check-category/:id"
           exact
           element={<ExperienceCheckCategory />}
         />

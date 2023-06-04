@@ -2,14 +2,17 @@ import React from "react";
 import playButton from "../img/fresher-eligibility-images/play.png";
 import roadMap from "../img/fresher-eligibility-images/road_map_1_05.png";
 import ExperienceCheckCategoryImg from "../img/experience-check-category_final.png";
+import ExperienceMindLevelCategoryImg from '../img/mind_level.png'
+import ExperienceSeniorLevelCategoryImg from '../img/senior_level.png'
 import superFast from "../img/super_fast.png";
 import superLite from "../img/super_lite.png";
 import tickSuperFast from "../img/tick_super.png";
 import { Link } from "react-router-dom";
 import accessNow from "../img/access_now.png";
 import { useNavigate } from "react-router-dom";
+import comment from '../img/comment.png';
 
-const ExperienceSelectBox = () => {
+const ExperienceSelectBox = ({id}) => {
 
   const navigate = useNavigate()
 
@@ -18,7 +21,9 @@ const ExperienceSelectBox = () => {
     navigate("/experience-eligibility-payment")
   }
 
-
+const handleClickChnage=()=>{
+  navigate("/experience-select-category")
+}
 
   return (
     <div className="container">
@@ -104,13 +109,27 @@ const ExperienceSelectBox = () => {
         <img src={roadMap} alt="road-map" />
       </section>
 
+      <div className="experience-check-title">
+      <div className="experience_check_category_side_container ml-3 experience-check-sub-title-left">
+          <p>Showing plans for</p>
+          {id==='1'?
+          <>
+          <h3>Entry level</h3>
+          <p>(Freshers or upto 2 yrs experience)</p></>:id==='2'?<>
+          <h3>Mid level</h3>
+          <p>(2 -10 yrs experience)</p></>:<>
+          <h3>Senior level</h3>
+          <p>(Above 10yrs experience)</p></>}
+        </div>
+        <div className="experience-check-sub-title-right" onClick={()=>handleClickChnage()}>change</div>
+        </div>
       <section className="experience_check_category_main_container">
         <div className="experience_check_category_side_container">
-          <p>Showing plans for</p>
-          <h3>Entry level</h3>
-          <p>(Freshers or upto 2 yrs experience)</p>
-
-          <img src={ExperienceCheckCategoryImg} alt="experience" />
+          {id==='1'?
+          <>
+          <img src={ExperienceCheckCategoryImg} alt="experience" /></>:id==='2'?<>
+          <img src={ExperienceMindLevelCategoryImg} alt="experience" /></>:<>
+          <img src={ExperienceSeniorLevelCategoryImg} alt="experience" /></>}
         </div>
         <div className="experience_check_category_inner_container">
         <div>
@@ -221,6 +240,9 @@ const ExperienceSelectBox = () => {
           </div>
         </div>
       </section>
+      
+      <div><div className="experience-comment-title">Candidates who opted our Services</div>
+          <div><img src={comment} alt="comment" /></div></div>
     </div>
   );
 };

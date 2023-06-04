@@ -23,6 +23,28 @@
     color: #005F59;
 }
 
+.experience-check-title {
+    display: flex;
+}
+
+.experience-check-sub-title-left {
+    flex: 1;
+    color: #005F59;
+}
+.experience-comment-title{
+    font-family: 'Lexend';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 101%;
+    margin-bottom: 20px;
+}
+.experience-check-sub-title-right {
+    display: flex;
+    justify-items: flex-end;
+    align-items: flex-end;
+    margin-right: 30px;
+}
 .experience_check_category_super_fast_container {
 
     box-sizing: border-box;

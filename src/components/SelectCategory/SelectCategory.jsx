@@ -10,8 +10,8 @@ const SelectCategory = () => {
 
   const [colorBox, setColorBox] = useState(1)
 
-  const handleNavigate = ()=>{
-navigate("/experience-check-category")
+  const handleNavigate = (id)=>{
+navigate(`/experience-check-category/${id}`)
   }
 
   return (
@@ -105,7 +105,7 @@ navigate("/experience-check-category")
 <div onMouseEnter={()=>{
           setColorBox(1)
         }}  className={`category_level_container ${colorBox===1&&"activeBox"}`}>
-          <div onClick={handleNavigate} onMouseEnter={()=>{
+          <div onClick={()=>handleNavigate(1)} onMouseEnter={()=>{
           setColorBox(1)
         }}>
             <h4>Entry Level</h4>
@@ -114,7 +114,7 @@ navigate("/experience-check-category")
           <img src={right} alt="right" />
         </div>
 
-        <div onClick={handleNavigate} onMouseEnter={()=>{
+        <div onClick={()=>handleNavigate(2)} onMouseEnter={()=>{
           setColorBox(2)
         }} className={`category_level_container ${colorBox===2&&"activeBox"}`}>
           <div>
@@ -124,7 +124,7 @@ navigate("/experience-check-category")
           <img src={right} alt="right" />
         </div>
 
-      <div onClick={handleNavigate} onMouseEnter={()=>{
+      <div onClick={()=>handleNavigate(3)} onMouseEnter={()=>{
           setColorBox(3)
         }} className={`category_level_container ${colorBox===3&&"activeBox"}`}>
           <div>
