@@ -7,7 +7,7 @@ import selectIcon from "../img/select-icon.png";
 import Certi from "../img/certi.png";
 import SvgArrow from "../img/arrow-svg.svg";
 import RightGreen from "../img/right-green.png";
-import superFastImage from '../img/super_lite.png'
+import superFastImage from "../img/super_lite.png";
 import Mail from "../img/mail.png";
 
 import Calendar from "../img/icons/calendar.png";
@@ -19,7 +19,7 @@ import { useNavigate } from "react-router-dom";
 import Paid from "../img/paid.gif";
 import congratsLeft from "../img/congrats-left.png";
 import CongratsRight from "../img/congrats-right.png";
-import { useParams } from 'react-router-dom';
+import { useParams } from "react-router-dom";
 import { ApiBaseUrl } from "../BaseUrl/baseUrl";
 // import {useNavigate } from 'react-router-dom'
 
@@ -27,9 +27,9 @@ const BasketPaymentTwo = () => {
   // let navigate = useNavigate();
   const params = useParams();
   const course_id = [params.id];
-  window.localStorage.setItem('course_id', JSON.stringify(course_id))
+  window.localStorage.setItem("course_id", JSON.stringify(course_id));
   const Token = JSON.parse(window.localStorage.getItem("token"));
-  
+
   const [payment, setPayment] = useState({
     price: 499,
     name: "Salaryfy",
@@ -46,7 +46,7 @@ const BasketPaymentTwo = () => {
     }
   };
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const termsClick = () => {
     navigate("/terms-of-use");
@@ -62,7 +62,7 @@ const BasketPaymentTwo = () => {
       order_id: data.id,
       handler: async (response) => {
         try {
-          const verifyUrl = ApiBaseUrl+"payment/verify";
+          const verifyUrl = ApiBaseUrl + "payment/verify";
           const config = {
             headers: {
               "x-access-token": Token,
@@ -97,28 +97,25 @@ const BasketPaymentTwo = () => {
   };
 
   const handlePayment = async () => {
-   
-      try {
-        navigate('/AfterScholarshipTestDashboardTwo')
-        const orderUrl = ApiBaseUrl+"payment/orders";
-        const config = {
-          headers: {
-            "x-access-token": Token,
-          },
-        };
-        const { data } = await axios.post(
-          orderUrl,
-          { amount: paymentAmount, type: "1" },
-          config
-        );
-        console.log({ data });
-        initPayment(data.data);
-      } catch (error) {
-        console.log(error);
-      }
-    
+    try {
+      navigate("/ntd");
+      const orderUrl = ApiBaseUrl + "payment/orders";
+      const config = {
+        headers: {
+          "x-access-token": Token,
+        },
+      };
+      const { data } = await axios.post(
+        orderUrl,
+        { amount: paymentAmount, type: "1" },
+        config
+      );
+      console.log({ data });
+      initPayment(data.data);
+    } catch (error) {
+      console.log(error);
+    }
   };
-  
 
   return (
     <React.Fragment>
@@ -133,33 +130,38 @@ const BasketPaymentTwo = () => {
                   <div className="heading">
                     <p
                       className="text-center w-100"
-                      id="Basket_Payment_hide_show_text">
+                      id="Basket_Payment_hide_show_text"
+                    >
                       You have opted for
                     </p>
                     <p
                       className="text-left "
                       id="Basket_Payment_hide_text"
-                      style={{ display: "none" }}>
+                      style={{ display: "none" }}
+                    >
                       You have opted for
                     </p>
                   </div>
                   <div
                     className="table-responsive-xl
-                                    special-inclusions-table">
-                                        <div className="certificate_background_sec">
+                                    special-inclusions-table"
+                  >
+                    <div className="certificate_background_sec">
                       <div className="basket-payment">
                         <div className="certificate_title">
                           <h3 className="h3">Super Fast</h3>
                           <h4>₹500</h4>
                         </div>
-                  
+
                         <div
                           className="accordion style-2"
-                          id="accordionExample">
+                          id="accordionExample"
+                        >
                           <div className="card">
                             <div
                               id="heading-one"
-                              className="card-header collapsed show-more-less">
+                              className="card-header collapsed show-more-less"
+                            >
                               Job switch plan for
                               {/* <img
                                 src={selectIcon}
@@ -168,12 +170,12 @@ const BasketPaymentTwo = () => {
                               /> */}
                             </div>
 
-
                             <div
                               id="collapse0"
                               className="collapse show"
                               data-parent="#accordionExample"
-                              aria-labelledby="heading-one">
+                              aria-labelledby="heading-one"
+                            >
                               <div className="card-body">
                                 <ul>
                                   <li>
@@ -183,38 +185,37 @@ const BasketPaymentTwo = () => {
                                     <p>Expected hike 80%</p>
                                   </li>
                                   <li>
-                                    <p>
-                                    Resume building
-                                    </p>
+                                    <p>Resume building</p>
                                   </li>
                                   <li>
                                     <p>Linkedinenhancement</p>
                                   </li>
                                   <li>
-                                    <p>
-                                      Job fitment analysis
-                                    </p>
+                                    <p>Job fitment analysis</p>
                                   </li>
-                                 
                                 </ul>
                                 <div className="left_checkbox">
-                                      <div className="form-check">
-                                        <input
-                                          className="form-check-input"
-                                          type="checkbox"
-                                          value=""
-                                          id="invalidCheck2"
-                                          checked={isChecked}
-                                          onChange={handleCheckboxChange}
-                                        />
-                                        <label
-                                          className="form-check-label"
-                                          htmlFor="invalidCheck2">
-                                         I have read all the <span onClick={termsClick}> Terms & conditions</span> 
-                                        </label>
-                                      </div>
-                                    </div>
-                                
+                                  <div className="form-check">
+                                    <input
+                                      className="form-check-input"
+                                      type="checkbox"
+                                      value=""
+                                      id="invalidCheck2"
+                                      checked={isChecked}
+                                      onChange={handleCheckboxChange}
+                                    />
+                                    <label
+                                      className="form-check-label"
+                                      htmlFor="invalidCheck2"
+                                    >
+                                      I have read all the{" "}
+                                      <span onClick={termsClick}>
+                                        {" "}
+                                        Terms & conditions
+                                      </span>
+                                    </label>
+                                  </div>
+                                </div>
                               </div>
                             </div>
                           </div>
@@ -223,19 +224,16 @@ const BasketPaymentTwo = () => {
                     </div>
                     <table className="table">
                       <tbody>
-                      
-
                         <tr
                           className="bg-blue-line-1
-                                                total-row-border">
+                                                total-row-border"
+                        >
                           <td className="">
                             {" "}
                             {/* <p>(Inclusive of 18% gst)</p> */}
                           </td>
 
-                          <td>
-                            {/* <p> ₹999</p> */}
-                          </td>
+                          <td>{/* <p> ₹999</p> */}</td>
                         </tr>
                         <tr className="bg-blue-line-1">
                           <td className="">
@@ -246,9 +244,7 @@ const BasketPaymentTwo = () => {
                             </p> */}
                           </td>
 
-                          <td>
-                            {/* <p>- ₹500</p> */}
-                          </td>
+                          <td>{/* <p>- ₹500</p> */}</td>
                         </tr>
 
                         <tr className="total-row">
@@ -263,7 +259,7 @@ const BasketPaymentTwo = () => {
                     </table>
 
                     <div className="form-group">
-                                    {/* <div className="left_checkbox">
+                      {/* <div className="left_checkbox">
                                       <div className="form-check">
                                         <input
                                           className="form-check-input"
@@ -280,7 +276,7 @@ const BasketPaymentTwo = () => {
                                         </label>
                                       </div>
                                     </div> */}
-                                    {/* <div className="left_checkbox">
+                      {/* <div className="left_checkbox">
                                       <div className="form-check">
                                         <input
                                           className="form-check-input"
@@ -297,7 +293,7 @@ const BasketPaymentTwo = () => {
                                         </label>
                                       </div>
                                     </div> */}
-                                    {/* <div className="left_checkbox">
+                      {/* <div className="left_checkbox">
                                       <div className="form-check">
                                         <input
                                           className="form-check-input"
@@ -314,18 +310,20 @@ const BasketPaymentTwo = () => {
                                         </label>
                                       </div>
                                     </div> */}
-                                    
-                                  </div>
+                    </div>
                     <div className="right-block">
-                     
                       <button
                         onClick={handlePayment}
                         id="buttonClick"
                         className="theme_btn tertiary"
-                        >
-                         Proceed
-                        <img src={RightGreen} alt="arrow" className="img-1"/>
-                             <img src={SvgArrow} className="partners-img img-2" alt="" />
+                      >
+                        Proceed
+                        <img src={RightGreen} alt="arrow" className="img-1" />
+                        <img
+                          src={SvgArrow}
+                          className="partners-img img-2"
+                          alt=""
+                        />
                         <span></span>
                       </button>
                     </div>
@@ -375,10 +373,10 @@ const BasketPaymentTwo = () => {
               <div
                 className="right_certi_absolute full_show"
                 id="Zoom_page_hide"
-                style={{ display: "none" }}>
+                style={{ display: "none" }}
+              >
                 <div className="image-container">
                   <img src={Certi} alt="" />
-                 
                 </div>
               </div>
             </div>
@@ -391,7 +389,8 @@ const BasketPaymentTwo = () => {
         tabIndex="-1"
         role="dialog"
         aria-labelledby="exampleModalCenterTitle"
-        aria-hidden="true">
+        aria-hidden="true"
+      >
         <div className="modal-dialog modal-dialog-centered" role="document">
           <div className="modal-content">
             <div className="modal-header">
@@ -399,7 +398,8 @@ const BasketPaymentTwo = () => {
                 type="button"
                 className="close"
                 data-dismiss="modal"
-                aria-label="Close">
+                aria-label="Close"
+              >
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
@@ -422,24 +422,27 @@ const BasketPaymentTwo = () => {
         <div className="container ">
           <div className="row basket-row">
             <div className="col-lg-7">
-            <div className="basket-table">
+              <div className="basket-table">
                 <div className="special-inclusions">
                   <div className="heading">
                     <p
                       className="text-center w-100"
-                      id="Basket_Payment_hide_show_text">
+                      id="Basket_Payment_hide_show_text"
+                    >
                       Your Cart
                     </p>
                     <p
                       className="text-left "
                       id="Basket_Payment_hide_text"
-                      style={{ display: "none" }}>
+                      style={{ display: "none" }}
+                    >
                       You have opted for
                     </p>
                   </div>
                   <div
                     className="table-responsive-xl
-                                    special-inclusions-table">
+                                    special-inclusions-table"
+                  >
                     <div className="certificate_background_sec">
                       <div className="basket-payment">
                         <div className="certificate_title">
@@ -448,14 +451,16 @@ const BasketPaymentTwo = () => {
                         </div>
                         <div
                           className="accordion style-2"
-                          id="accordionExample">
+                          id="accordionExample"
+                        >
                           <div className="card">
                             <div
                               id="heading-one"
                               className="card-header collapsed show-more-less"
                               data-toggle="collapse"
                               data-target="#collapse0"
-                              aria-expanded="false">
+                              aria-expanded="false"
+                            >
                               Show less
                               <img
                                 src={selectIcon}
@@ -468,7 +473,8 @@ const BasketPaymentTwo = () => {
                               id="collapse0"
                               className="collapse show"
                               data-parent="#accordionExample"
-                              aria-labelledby="heading-one">
+                              aria-labelledby="heading-one"
+                            >
                               <div className="card-body">
                                 <ul>
                                   <li>
@@ -478,9 +484,7 @@ const BasketPaymentTwo = () => {
                                     <p>Career centre - 360o development</p>
                                   </li>
                                   <li>
-                                    <p>
-                                      High Paying Top Industry Skills
-                                    </p>
+                                    <p>High Paying Top Industry Skills</p>
                                   </li>
                                   <li>
                                     <p>NASSCOM recognised certificate</p>
@@ -524,27 +528,30 @@ const BasketPaymentTwo = () => {
                                         />
                                         <label
                                           className="form-check-label"
-                                          for="invalidCheck2">
-                                         Get NASSCOM certificate worth ₹1000
+                                          for="invalidCheck2"
+                                        >
+                                          Get NASSCOM certificate worth ₹1000
                                         </label>
                                       </div>
                                     </div>
                                     <div
                                       className="App"
-                                      id="basket_payment_zoom_hover">
+                                      id="basket_payment_zoom_hover"
+                                    >
                                       <div id="imageMagnifyer">
                                         <div className="thumbnail-container">
-                                        <button
-                                              className="thumbnail-container"
-                                              type="button"
-                                              data-toggle="modal"
-                                              data-target="#exampleModalCenter">
-                                              <img
-                                                src={Certi}
-                                                alt=""
-                                                className="thumb"
-                                              />
-                                            </button>
+                                          <button
+                                            className="thumbnail-container"
+                                            type="button"
+                                            data-toggle="modal"
+                                            data-target="#exampleModalCenter"
+                                          >
+                                            <img
+                                              src={Certi}
+                                              alt=""
+                                              className="thumb"
+                                            />
+                                          </button>
                                         </div>
                                       </div>
                                     </div>
@@ -560,7 +567,8 @@ const BasketPaymentTwo = () => {
                       <tbody>
                         <tr
                           className="bg-blue-line-1
-                                                total-row-border">
+                                                total-row-border"
+                        >
                           <td className="">
                             {" "}
                             <p>(Inclusive of 18% gst)</p>
@@ -600,8 +608,7 @@ const BasketPaymentTwo = () => {
                         onClick={handlePayment}
                         id="buttonClick"
                         className="theme_btn tertiary"
-                        >
-                        
+                      >
                         Get access
                         <img src={RightGreen} alt="arrow" className="img-1" />
                         <img
@@ -658,7 +665,8 @@ const BasketPaymentTwo = () => {
               <div
                 className="right_certi_absolute full_show"
                 id="Zoom_page_hide"
-                style={{ display: "none" }}>
+                style={{ display: "none" }}
+              >
                 <div className="image-container">
                   <img src={Certi} alt="" />
                   {/* <div class="cursor-overlay"></div>
@@ -676,7 +684,8 @@ const BasketPaymentTwo = () => {
         tabIndex="-1"
         role="dialog"
         aria-labelledby="exampleModalCenterTitle"
-        aria-hidden="true">
+        aria-hidden="true"
+      >
         <div className="modal-dialog modal-dialog-centered" role="document">
           <div className="modal-content">
             <div className="modal-header">
@@ -684,7 +693,8 @@ const BasketPaymentTwo = () => {
                 type="button"
                 className="close"
                 data-dismiss="modal"
-                aria-label="Close">
+                aria-label="Close"
+              >
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
@@ -696,14 +706,15 @@ const BasketPaymentTwo = () => {
           </div>
         </div>
       </div>
- 
+
       <div
         className="modal fade sign-in-modal test-submit-modal congratulations-popup"
         id="submitTestModalNew"
         tabIndex="-1"
         role="dialog"
         aria-labelledby="exampleModalCenterTitle"
-        aria-hidden="true">
+        aria-hidden="true"
+      >
         <div className="modal-dialog modal-dialog-centered" role="document">
           <div className="modal-content">
             <div className="modal-header">
@@ -711,12 +722,16 @@ const BasketPaymentTwo = () => {
                 type="button"
                 className="close"
                 data-dismiss="modal"
-                aria-label="Close">
+                aria-label="Close"
+              >
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div className="modal-body ready-list">
-              <h2><img src={congratsLeft} alt=''/> Congratulations! <img src={CongratsRight} alt=''/></h2>
+              <h2>
+                <img src={congratsLeft} alt="" /> Congratulations!{" "}
+                <img src={CongratsRight} alt="" />
+              </h2>
               <p>
                 Your application has been registered
                 <br />
@@ -726,13 +741,14 @@ const BasketPaymentTwo = () => {
               <div className="test-box">
                 <div className="right-block">
                   <button
-                     onClick={() => {
-                       navigate('/ProgramsPageTwo');
-                      }}
-                    className="theme_btn tertiary">
+                    onClick={() => {
+                      navigate("/ProgramsPageTwo");
+                    }}
+                    className="theme_btn tertiary"
+                  >
                     Proceed
-                    <img src={RightGreen} alt="arrow" className="img-1"/>
-                             <img src={SvgArrow} className="partners-img img-2" alt="" />
+                    <img src={RightGreen} alt="arrow" className="img-1" />
+                    <img src={SvgArrow} className="partners-img img-2" alt="" />
                     <span></span>
                   </button>
                 </div>
@@ -748,7 +764,8 @@ const BasketPaymentTwo = () => {
         tabIndex="-1"
         role="dialog"
         aria-labelledby="exampleModalCenterTitle"
-        aria-hidden="true">
+        aria-hidden="true"
+      >
         <div className="modal-dialog modal-dialog-centered" role="document">
           <div className="modal-content">
             <div className="modal-header">
@@ -756,12 +773,13 @@ const BasketPaymentTwo = () => {
                 type="button"
                 className="close"
                 data-dismiss="modal"
-                aria-label="Close">
+                aria-label="Close"
+              >
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div className="modal-body ready-list">
-              <img src={Paid} alt=''className="paid_icon"/>
+              <img src={Paid} alt="" className="paid_icon" />
             </div>
           </div>
         </div>
