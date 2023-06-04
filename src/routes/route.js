@@ -356,7 +356,11 @@ const RoutePath = () => {
           element={<ExperienceCheckCategory />}
         />
         <Route path="ntd" exact element={<NTDBox />} />
-        <Route path="experience-job-switch" exact element={<JobSwitchBox />} />
+        <Route
+          path="experience-job-switch/:id"
+          exact
+          element={<JobSwitchBox />}
+        />
 
         <Route path="terms-of-use" exact element={<TermsAndConditions />} />
         <Route path="privacy-policy" exact element={<PrivacyPolicy />} />

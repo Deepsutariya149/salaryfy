@@ -18,7 +18,7 @@ const ExperienceSelectBox = ({id}) => {
 
 
   const handleNavigate = ()=>{
-    navigate("/experience-eligibility-payment")
+    navigate("/experience-eligibility")
   }
 
 const handleClickChnage=()=>{
@@ -170,7 +170,7 @@ const handleClickChnage=()=>{
               </div>
             </div>
             <div className="experience_view_full_container">
-              <Link className="experience_view_full" to="/experience-job-switch">
+              <Link className="experience_view_full" to={`/experience-job-switch/${id}`}>
                 View Full Details
               </Link>
             </div>
@@ -230,7 +230,7 @@ const handleClickChnage=()=>{
               </div>
             </div>
             <div className="experience_view_full_container">
-              <Link className="experience_view_full" to="/experience-job-switch">
+              <Link className="experience_view_full" to={`/experience-job-switch/${id}`}>
                 View Full Details
               </Link>
             </div>

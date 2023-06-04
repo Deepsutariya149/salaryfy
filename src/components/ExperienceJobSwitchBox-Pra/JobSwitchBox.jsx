@@ -1,9 +1,14 @@
 import React from 'react'
 import superLiteImage from '../img/super_lite.png'
 import tick from '../img/tick_super.png'
-import accessButton from '../img/access_now.png'
+import backToPlans from '../img/back_to_plans.png'
 import singleComment from '../img/side_single_comment.png'
-const JobSwitchBox = () => {
+import { useNavigate } from "react-router-dom";
+const JobSwitchBox = ({id}) => {
+    const navigate = useNavigate();
+    const backToPlansClick = () => {
+        navigate(`/experience-check-category/${id}`);
+    };
   return (
     <div className="container"style={{display:'flex'}}>
         <div style={{marginTop:'15%',marginRight    :'5%'}}>
@@ -86,7 +91,7 @@ const JobSwitchBox = () => {
               </div>
 
               <div className='jobSwitch_access_button'>
-                <img src={accessButton} alt="access" />
+                <img src={backToPlans} alt="access" onClick={backToPlansClick}/>
               </div>
               </div>
 

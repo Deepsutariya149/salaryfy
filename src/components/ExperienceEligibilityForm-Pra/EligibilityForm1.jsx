@@ -106,7 +106,7 @@ const EligibilityForm1 = () => {
 
   const nextStep = ()=>{
     // navigate("/experience-eligibility-instant-skill")
-    navigate("/experience-select-category")
+    navigate("/experience-eligibility-payment")
     
   }
 
