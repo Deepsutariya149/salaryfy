@@ -86,6 +86,7 @@ import FresherPlacementDetailsFirstStep from "../components/FresherPlacementDeta
 import FresherPlacementDetailsSecondStep from "../components/FresherPlacementDetails_2step";
 import FresherPlacementDetailsThirdStep from "../components/FresherPlacementDetails_3step";
 
+import NTDBox from "../components/NTD";
 const RoutePath = () => {
   return (
     <BrowserRouter>
@@ -354,6 +355,7 @@ const RoutePath = () => {
           exact
           element={<ExperienceCheckCategory />}
         />
+        <Route path="ntd" exact element={<NTDBox />} />
         <Route path="experience-job-switch" exact element={<JobSwitchBox />} />
 
         <Route path="terms-of-use" exact element={<TermsAndConditions />} />
