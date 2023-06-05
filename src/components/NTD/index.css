@@ -45,6 +45,30 @@
     color: #005F59;
     margin-bottom: 3%;
 }
-.done_btn {
+.modal_main {
+    background: #FFFFFF;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.13);
+    border-radius: 13px;
+    padding: 30px;
+    min-width: 500px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+.modal_first_image {
+    margin-bottom: 20px;
+}
+.modal_text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 29px;
+    text-align: center;
+    color: #005F59; 
+    margin-bottom: 20px;
+}
+    .modal_second_image {
 
 }

@@ -1,0 +1,68 @@
+.supper-fast-title{
+    font-family: 'Lexend';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 138.5%;
+    color: #005F59;   
+    margin-left: 18px;
+}
+.supper-fast-title-sub {
+    font-family: 'Lexend';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 138.5%;
+    color: #5B5B5B;   
+    margin-left: 18px;
+}
+.supper-fast-title-sub-bold {
+    font-family: 'Lexend';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 138.5%;
+    color: #5B5B5B;
+    margin-left: 18px;
+    margin-right: 5px;
+}
+.head-outer{
+    display: flex;
+    padding: 10px 30px;
+    background: linear-gradient(180deg, rgba(254, 205, 8, 0.07) 0%, rgba(14, 95, 89, 0.19) 100%);
+    border: 1px solid rgba(14, 95, 89, 0.1);
+    border-radius: 0px;
+}
+.detalis-header {
+    display: flex;
+    flex-direction: column;
+}
+.image_fast {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card-outer {
+    background: rgba(14, 95, 89, 0.05);
+    border-radius: 0px;
+    border-bottom: 9px solid #FECD08;;
+}
+.list-outer {
+    display: flex;
+    align-items: center;
+}
+.list-img {
+    display: flex;
+    align-items: center;
+}
+.lsit-title {
+    display: flex;
+    margin-left: 10px;
+    font-family: 'Lexend';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 138.5%;
+    color: #5B5B5B;
+    margin-bottom: 3px;
+}

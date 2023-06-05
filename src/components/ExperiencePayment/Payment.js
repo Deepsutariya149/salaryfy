@@ -3,13 +3,13 @@ import Navbar from "../common/navbar";
 import Footer from "../common/footer";
 
 import selectIcon from "../img/select-icon.png";
-
+import greenCheck from "../img/green-check.png";
 import Certi from "../img/certi.png";
 import SvgArrow from "../img/arrow-svg.svg";
 import RightGreen from "../img/right-green.png";
 import superFastImage from "../img/super_lite.png";
 import Mail from "../img/mail.png";
-
+import fastWithLine from "../img/fast_with_line.png";
 import Calendar from "../img/icons/calendar.png";
 import "../website/css/zoom.css";
 import "../website/js/zoom.js";
@@ -148,73 +148,130 @@ const BasketPaymentTwo = () => {
                   >
                     <div className="certificate_background_sec">
                       <div className="basket-payment">
-                        <div className="certificate_title">
-                          <h3 className="h3">Super Fast</h3>
-                          <h4>₹500</h4>
-                        </div>
-
-                        <div
-                          className="accordion style-2"
-                          id="accordionExample"
-                        >
-                          <div className="card">
-                            <div
-                              id="heading-one"
-                              className="card-header collapsed show-more-less"
-                            >
+                        <div className="head-outer">
+                          <div className="image_fast">
+                            <img
+                              src={fastWithLine}
+                              alt="fastWithLine"
+                              height="70px"
+                            />
+                          </div>
+                          <div className="detalis-header">
+                            <div className="supper-fast-title">Super Fast</div>
+                            <div className="supper-fast-title-sub">
                               Job switch plan for
-                              {/* <img
-                                src={selectIcon}
-                                className="select-icon"
-                                alt=""
-                              /> */}
                             </div>
-
-                            <div
-                              id="collapse0"
-                              className="collapse show"
-                              data-parent="#accordionExample"
-                              aria-labelledby="heading-one"
-                            >
-                              <div className="card-body">
-                                <ul>
-                                  <li>
-                                    <p>Job switch within 2 months</p>
-                                  </li>
-                                  <li>
-                                    <p>Expected hike 80%</p>
-                                  </li>
-                                  <li>
-                                    <p>Resume building</p>
-                                  </li>
-                                  <li>
-                                    <p>Linkedinenhancement</p>
-                                  </li>
-                                  <li>
-                                    <p>Job fitment analysis</p>
-                                  </li>
-                                </ul>
-                                <div className="left_checkbox">
-                                  <div className="form-check">
-                                    <input
-                                      className="form-check-input"
-                                      type="checkbox"
-                                      value=""
-                                      id="invalidCheck2"
-                                      checked={isChecked}
-                                      onChange={handleCheckboxChange}
-                                    />
-                                    <label
-                                      className="form-check-label"
-                                      htmlFor="invalidCheck2"
-                                    >
-                                      I have read all the{" "}
-                                      <span onClick={termsClick}>
-                                        {" "}
-                                        Terms & conditions
-                                      </span>
-                                    </label>
-                                  </div>
+                            <div>
+                              <span className="supper-fast-title-sub-bold">
+                                Enter Level
+                              </span>
+                              <span>Working Experience</span>
+                            </div>
+                          </div>
+                          <div
+                            style={{
+                              display: "flex",
+                              gap: "5px",
+                              marginLeft: "40px",
+                            }}
+                          >
+                            <strike className="thousand_strike">₹1000</strike>
+                            <span className="five_hundred_strike">₹500</span>
+                          </div>
+                        </div>
+                        <div className="card-outer">
+                          <div
+                            id="collapse0"
+                            className="collapse show"
+                            data-parent="#accordionExample"
+                            aria-labelledby="heading-one"
+                          >
+                            <div className="card-body">
+                              <div className="list-outer">
+                                <div className="list-img">
+                                  <img
+                                    src={greenCheck}
+                                    alt="greenCheck"
+                                    height="15px"
+                                    width="15px"
+                                  />
+                                </div>
+                                <div className="lsit-title">
+                                  Job switch within 2 months
+                                </div>
+                              </div>
+                              <div className="list-outer">
+                                <div className="list-img">
+                                  <img
+                                    src={greenCheck}
+                                    alt="greenCheck"
+                                    height="15px"
+                                    width="15px"
+                                  />
+                                </div>
+                                <div className="lsit-title">
+                                  Expected hike 80%
+                                </div>
+                              </div>
+                              <div className="list-outer">
+                                <div className="list-img">
+                                  <img
+                                    src={greenCheck}
+                                    alt="greenCheck"
+                                    height="15px"
+                                    width="15px"
+                                  />
+                                </div>
+                                <div className="lsit-title">
+                                  Resume building
+                                </div>
+                              </div>
+                              <div className="list-outer">
+                                <div className="list-img">
+                                  <img
+                                    src={greenCheck}
+                                    alt="greenCheck"
+                                    height="15px"
+                                    width="15px"
+                                  />
+                                </div>
+                                <div className="lsit-title">
+                                  Linkedinenhancement
+                                </div>
+                              </div>{" "}
+                              <div className="list-outer">
+                                <div className="list-img">
+                                  <img
+                                    src={greenCheck}
+                                    alt="greenCheck"
+                                    height="15px"
+                                    width="15px"
+                                  />
+                                </div>
+                                <div className="lsit-title">
+                                  Job fitment analysis
+                                </div>
+                              </div>
+                              <div className="left_checkbox">
+                                <div className="form-check">
+                                  <input
+                                    className="form-check-input"
+                                    type="checkbox"
+                                    value=""
+                                    id="invalidCheck2"
+                                    checked={isChecked}
+                                    onChange={handleCheckboxChange}
+                                  />
+                                  <label
+                                    className="form-check-label"
+                                    htmlFor="invalidCheck2"
+                                  >
+                                    I have read all the{" "}
+                                    <span onClick={termsClick}>
+                                      {" "}
+                                      Terms & conditions
+                                    </span>
+                                  </label>
                                 </div>
                               </div>
                             </div>
@@ -224,29 +281,6 @@ const BasketPaymentTwo = () => {
                     </div>
                     <table className="table">
                       <tbody>
-                        <tr
-                          className="bg-blue-line-1
-                                                total-row-border"
-                        >
-                          <td className="">
-                            {" "}
-                            {/* <p>(Inclusive of 18% gst)</p> */}
-                          </td>
-
-                          <td>{/* <p> ₹999</p> */}</td>
-                        </tr>
-                        <tr className="bg-blue-line-1">
-                          <td className="">
-                            {/* <p className="p">
-                              {" "}
-                              Coupon
-                              <input type="text" placeholder="STUDY500" />
-                            </p> */}
-                          </td>
-
-                          <td>{/* <p>- ₹500</p> */}</td>
-                        </tr>
-
                         <tr className="total-row">
                           <td>
                             <h4>Total:</h4>
